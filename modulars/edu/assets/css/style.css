@@ -1,0 +1,806 @@
+ /**
+    教育集团管理桌面 ---start
+    1920*1080
+ */
+ .edu .tqimgdiv_edu{
+    width: 44px;
+    height: 50%;
+    /* background: url(../images/tq_hpt.png) no-repeat; */
+    background-size: 100% 100%;
+}
+.tui .tqimgdiv_tui{
+    width: 44px;
+    height: 50%;
+    /* background: url(../images/tq_hpt.png) no-repeat; */
+    background-size: 100% 100%;
+}
+.sum .tqimgdiv_sum{
+    width: 44px;
+    height: 50%;
+    /* background: url(../images/tq_hpt.png) no-repeat; */
+    background-size: 100% 100%;
+}
+.stu .tqimgdiv_stu{
+    width: 44px;
+    height: 50%;
+    /* background: url(../images/tq_hpt.png) no-repeat; */
+    background-size: 100% 100%;
+}
+
+ .edu .pcmgqMr{
+     margin-right: -18%;
+ }
+ .edu .rowMarginlR{
+     margin-left: 0;
+     margin-right: 0;
+ }
+ .edu .center_bg{
+	width: 40%;
+	background: url(../images/wygs/016.png) center center / 100% 100% no-repeat;
+	position: absolute;
+	left: 33%;
+	top: 18%
+}
+.edu .edu-content-left {
+	height:84.5%; 
+	width:16%; 
+	float:left;
+	margin-top:1%;
+ }
+ .edu .edu-content-right {
+	margin-left:1%;
+	height:84.5%; 
+	width:83%; 
+	float:right;
+	margin-top:1%;
+ }
+ .edu .edu-left-item1 {
+	width: 100%;
+	height:60%; 
+	background: url(../images/wygs/010.png) no-repeat;
+	background-size: 100% 100%;
+ }
+ .edu .edu-left-item2 {
+	margin-top:5%;
+	width: 100%;
+	height:38%; 
+	background: url(../images/wygs/010.png) no-repeat;
+	background-size: 100% 100%;
+ }
+ .edu .edu-right-item {
+	 width: 100%;
+	 height: 100%;
+	 background: url(../images/wygs/013.png) no-repeat;
+	 background-size: 100% 100%;
+ }
+
+
+ .edu .edu-right-itemtop {
+	 border-bottom: 1px solid #3AF0DA;
+	 height: 8%;
+	 width: 99.5%;
+	 margin-left: 2px;
+ }
+ .edu .edu-right-itembody {
+	height: 92%;
+ }
+ .edu .edu-right-itembody1 {
+	border-right: 1px solid #3AF0DA;
+	height: 99.5%;
+	width:75%;
+	float: left;
+
+}
+ .edu .edu-right-itembody2 {
+	height: 99.5%;
+	width:25%;
+	float: right;
+}
+.edu .itembodys1 {
+	height: 25%;
+	width: 99.8%;
+	margin-left: 2px;
+	border-bottom: 1px solid #3AF0DA;
+}
+.edu .itembodys2 {
+	height: 31%;
+	width: 99.8%;
+	margin-left: 2px;
+	border-bottom: 1px solid #3AF0DA;
+}
+.edu .itembodys3 {
+	height: 44%;
+	width: 99.8%;
+	margin-left: 2px;
+}
+.edu .itembodys3-left {
+	height: 100%;
+	width: 50%;
+	border-right: 1px solid #3AF0DA;
+	float: left;
+	
+}
+.edu .itembodys3-right {
+	height: 100%;
+	width: 50%;
+	float: right;
+
+}
+.edu .edu-itemtitle {
+	width: 56%;
+	height: 35px;
+	background-color: #0B61D0;
+	border-radius: 30px 30px;
+}
+.edu .edu-itemtitle p {
+	color: #fff;
+	font-size: 2.2rem;
+	text-align: center;
+	padding-top: 2px;
+	font-weight:bold;
+}
+.edu .edu-itemtitle-jyfx {
+	width: 12%;
+	height: 35px;
+	background-color: #0B61D0;
+	border-radius: 30px 30px;
+}
+.edu .edu-itemtitle-jyfx p {
+	color: #fff;
+	font-size: 2.2rem;
+	text-align: center;
+	padding-top: 2px;
+	font-weight:bold;
+}
+.edu .edu-itemtitle2 {
+	width: 25%;
+	height: 35px;
+	background-color: #04837A;
+	border-radius: 30px 30px;
+}
+.edu .butBor{
+    border: 0;
+}
+.edu .butBor .pFx{
+    margin-top: -12px;
+}
+.edu .edu-itemtitle2 p {
+	color: #fff;
+	font-size: 2.0rem;
+	text-align: center;
+	padding-top: 2px;
+	font-weight:bold;
+}
+.edu .edu-itemtitle3 {
+	width: 48%;
+	height: 30px;
+	background-color: #04837A;
+	border-radius: 30px 30px;
+}
+.edu .edu-itemtitle3 p {
+	color: #fff;
+	font-size: 2.2rem;
+	text-align: center;
+	font-weight:bold;
+}
+.edu .edu-itemtitle3-top5 {
+	width: 58%;
+	height: 30px;
+	background-color: #04837A;
+    border-radius: 30px 30px;
+    margin-left: 20px;
+}
+.edu .edu-itemtitle3-top5 p {
+	color: #fff;
+	font-size: 2.2rem;
+	text-align: center;
+	font-weight:bold;
+}
+.edu .edu-itembodys1{
+	text-align: center;
+	margin-top:14px;
+
+}
+.edu .edu-itembodys1 .rowcss{
+	height: 14%;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+}
+.edu .edu-itembodys1 .numpt{
+	margin-top:14px;
+
+}
+.edu .number {
+	color: #35FBDE;
+	font-size: 2.8rem;
+}
+.edu .numberMarLR{
+	margin-right: 4%;
+}
+.edu .number .wy{
+	font-size: 1.8rem;
+}
+.edu .describe {
+	font-size: 2.0rem;
+	color:#fff;
+
+}
+.edu .describeMarLR{
+	margin-left: 8%;
+    margin-top: 2%;
+}
+.edu .marL{
+	margin-left: 3%;
+}
+.edu .edu-itembodys2{
+	padding-left: 10px;
+    margin-top: 3%;
+    height:70%;
+
+}
+.edu .edu-itembodys2 .dispt{
+	margin-top: 18px;
+
+}
+.edu .itembodys1-left{
+	padding-left: 30px;
+    float: left;
+	width: 50%;
+}
+.edu .itembodys1-right{
+	float: right;
+	width: 50%;
+}
+.edu .itembodys1 .cost {
+	color: #fff;
+	font-size: 2.8rem;
+}
+.edu .itembodys1 .cost-number {
+	color: #FFDE09;
+	font-size: 3.8rem;
+}
+.edu .itembodys1 .cost-w {
+	color: #FFDE09;
+	font-size: 2.0rem;
+}
+.edu .itembodys1 .newstudent {
+	color: #fff;
+	font-size: 1.8rem;
+
+}
+.edu .itembodys1 .newstudent-number {
+	color: #35FBDE;
+	font-size: 2.4rem;
+
+}
+.edu .itembodys1 .newstudent-wy {
+	color: #35FBDE;
+	font-size: 1.8rem;
+
+}
+.edu .itembodys3-right .groupNews {
+	line-height:1.0rem;
+    margin-top: 6%;
+    height: 8%;
+    
+}
+.edu .itembodys3-right .groupNews a {
+	font-size: 2.0rem;
+	color: #fff;
+}
+.edu .itembodys2 .linechartleft {
+	float:left;
+	width:50%;
+	height:80%;
+}
+.edu .itembodys2 .linechartleft .feelinechart{
+	width:90%;
+	height:100%;
+	margin-left: 5%;
+}
+.edu .itembodys2 .linechartright {
+	float:right;
+	width:50%;
+	height:80%;
+}
+
+.edu .itembodys2 .linechartright .peonumlinechart{
+	width:90%;
+	height:100%;
+	margin-left: 5%;
+}
+.edu .itembodys3-left .feepiecharts {
+	width: 100%;
+	height: 88%;
+}
+.edu .schoolKindergarten {
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 85%;
+	height: 30px;
+	border: 1px solid #0B61D0;
+	border-radius: 10px 10px;
+}
+.edu .schoolKindergarten .school{
+	width: 50%;
+	height: 30px;
+	background-color: #0B61D0;
+	border: 1px solid #0B61D0;
+	border-radius: 10px 0px 0px 10px;
+	float: left;
+	text-align: center;
+}
+.edu .schoolKindergarten .school label {
+	color: #fff;
+	font-size: 20px;
+}
+.edu .schoolKindergarten .kindergarten{
+	width: 50%;
+	height: 30px;
+	border: 1px solid #0B61D0;
+	background-color: transparent;
+	border-radius: 0px 10px 10px 0px;
+	float: right;
+	text-align: center;
+}
+.edu .schoolKindergarten .kindergarten label {
+	color: #0B61D0;
+	font-size: 20px;
+}
+.edu .schoolbar{
+	position: absolute;
+	width: 18%;
+	height:66%;
+	margin-left: 8px;
+	margin-top: 10px;
+}
+.edu .schoolbar .bar1 {
+	width: 100%;
+	height:33%;
+}
+.edu .schoolbar .bar2 {
+	width: 100%;
+	height:33%;
+}
+.edu .schoolbar .bar3 {
+	width: 100%;
+	height:33%;
+}
+.edus .checkboxfs{
+    font-size: 1.9rem;
+    color: #fff;
+}
+
+ .edu .Caiwu_title{
+	 height: 60%;
+	 margin-top: 2%;
+	 background: url(../images/wygs/020.png) center center / 100% 100% no-repeat;
+	 width: 26%;
+	 position: absolute;
+	 left: 40%;
+	 top: 5%;
+ }
+ .edu .Renli_title{
+	 height: 60%;
+	 margin-top: 2%;
+	 background: url(../images/wygs/021.png) center center / 100% 100% no-repeat;
+	 width: 26%;
+	 position: absolute;
+	 left: 40%;
+	 top: 5%;
+ }
+ .edu .tuiPro_title{
+	 height: 60%;
+	 margin-top: 2%;
+	 background: url(../images/wygs/017.png) center center / 100% 100% no-repeat;
+	 width: 26%;
+	 position: absolute;
+	 left: 40%;
+	 top: 5%;
+ }
+ .edu .sumPer_title{
+	 height: 60%;
+	 margin-top: 2%;
+	 background: url(../images/wygs/018.png) center center / 100% 100% no-repeat;
+	 width: 26%;
+	 position: absolute;
+	 left: 40%;
+	 top: 5%;
+ }
+ .edu .growthRate_title{
+	 height: 60%;
+	 margin-top: 2%;
+	 background: url(../images/wygs/019.png) center center / 100% 100% no-repeat;
+	 width: 26%;
+	 position: absolute;
+	 left: 40%;
+	 top: 5%;
+ }
+ .edu .back{
+	 padding-left: 2%;
+	 color: #fff;
+ }
+ .edu .btn_bg{
+	 background-color: rgb(4, 131, 122);
+ }
+ .hpt .cancel a{
+	 font-size: 2rem;
+ }
+
+/**
+   1366*768 分辨率适配
+*/
+@media screen and (max-width: 1370px){
+    .edu .pcmgqMr{
+        margin-right: -26%;
+    }
+    .edu .edu-itemtitle {
+        height: 25px; 
+	}
+	.edu .edu-itemtitle p {
+		font-size: 1.6rem;
+	}
+	.edu .edu-itemtitle-jyfx {
+		height: 25px;
+		margin-top: -5px;
+	}
+	.edu .edu-itemtitle-jyfx p {
+		font-size: 1.6rem;
+	}
+	.edu .edu-itemtitle2 {
+		height: 25px;
+	}
+	.edu .edu-itemtitle2 p {
+		font-size: 1.6rem;
+		padding-top: 1px;
+	}
+	.edu .edu-itemtitle3 {
+		height: 25px;
+	}
+	.edu .edu-itemtitle3 p {
+		font-size: 1.8rem;
+	}
+	.edu .edu-itemtitle3-top5 {
+		height: 25px;
+	}
+	.edu .edu-itemtitle3-top5 p {
+		font-size: 1.8rem;
+	}
+	.edu .edu-itembodys1{
+		margin-top:10px;
+	}
+	.edu .edu-itembodys1 .numpt{
+		margin-top: 10px;
+	}
+	.edu .number {
+		font-size: 1.8rem;
+	}
+	.edu .number .wy{
+		font-size: 1.2rem;
+	}
+	.edu .describe {
+		font-size: 1.6rem;
+	}
+	.edu .edu-itembodys2{
+        margin-top:3%;
+	}
+	.edu .edu-itembodys2 .dispt{
+		margin-top:20px;
+	}
+	.edu .itembodys1 .cost {
+		font-size: 1.8rem;
+	}
+	.edu .itembodys1 .cost-number {
+		font-size: 2.2rem;
+	}
+	.edu .itembodys1 .cost-w {
+		font-size: 1.4rem;
+	}
+	.edu .itembodys1 .newstudent {
+        font-size: 1.4rem;
+        margin-bottom: -5px;
+        margin-top: -2%;
+        margin-bottom: 2%;
+	}
+	.edu .itembodys1 .newstudent-number {
+		font-size: 1.8rem;
+	}
+	.edu .itembodys1 .newstudent-wy {
+		font-size: 1.2rem;
+    }
+    .edu .itembodys3-right .groupNews {
+        height: 6%;
+    }
+	.edu .itembodys3-right .groupNews a {
+		font-size: 1.4rem;
+	}
+	.edu .itembodys3-left .feepiecharts {
+		height:84%;
+	}
+	.edu .schoolKindergarten {
+		height: 25px;
+	}
+	.edu .schoolKindergarten .school{
+		height: 25px;
+	}
+	.edu .schoolKindergarten .school label {
+		font-size: 16px;
+	}
+	.edu .schoolKindergarten .kindergarten{
+		height: 25px;
+	}
+	.edu .schoolKindergarten .kindergarten label {
+		font-size: 16px;
+    }
+	.hpt .cancel a{
+		font-size: 1.5rem;
+	}
+    /* .edu .checkboxfs{
+        font-size: 1.2rem;
+    } */
+}
+/**
+   1024*768 分辨率适配
+*/
+@media screen and (m-width: 1024px){
+	.edu .edu-itemtitle {
+        height: 20px; 
+	}
+	.edu .edu-itemtitle p {
+		font-size: 1.2rem;
+	}
+	.edu .edu-itemtitle-jyfx {
+		height: 20px;
+		margin-top: -4px;
+	}
+	.edu .edu-itemtitle-jyfx p {
+		font-size: 1.2rem;
+	}
+	.edu .edu-itemtitle2 {
+		height: 20px;
+	}
+	.edu .edu-itemtitle2 p {
+		font-size: 1.2rem;
+		padding-top: 1px;
+	}
+	.edu .edu-itemtitle3 {
+		height: 20px;
+	}
+	.edu .edu-itemtitle3 p {
+		font-size: 1.2rem;
+	}
+	.edu .edu-itemtitle3-top5 {
+		height: 20px;
+	}
+	.edu .edu-itemtitle3-top5 p {
+		font-size: 1.2rem;
+	}
+	.edu .edu-itembodys1{
+		margin-top:10px;
+	}
+	.edu .edu-itembodys1 .numpt{
+		margin-top: 10px;
+	}
+	.edu .number {
+		font-size: 1.6rem;
+	}
+	.edu .number .wy{
+		font-size: 1.2rem;
+	}
+	.edu .describe {
+		font-size: 1.4rem;
+	}
+	.edu .edu-itembodys2{
+		margin-top:6px;
+	}
+	.edu .edu-itembodys2 .dispt{
+		margin-top:10px;
+	}
+	.edu .itembodys1 .cost {
+		font-size: 1.4rem;
+	}
+	.edu .itembodys1 .cost-number {
+		font-size: 2.0rem;
+	}
+	.edu .itembodys1 .cost-w {
+		font-size: 1.2rem;
+	}
+	.edu .itembodys1 .newstudent {
+		font-size: 0.8rem;
+	}
+	.edu .itembodys1 .newstudent-number {
+		font-size: 1.4rem;
+	}
+	.edu .itembodys1 .newstudent-wy {
+		font-size: 0.4rem;
+	}
+	.edu .itembodys3-right .groupNews a {
+        font-size: 0.8rem;
+	}
+	.edu .itembodys3-left .feepiecharts {
+		height:84%;
+	}
+	.edu .schoolKindergarten {
+		height: 20px;
+	}
+	.edu .schoolKindergarten .school{
+		height: 20px;
+	}
+	.edu .schoolKindergarten .school label {
+		font-size: 12px;
+	}
+	.edu .schoolKindergarten .kindergarten{
+		height: 20px;
+	}
+	.edu .schoolKindergarten .kindergarten label {
+		font-size: 12px;
+	}
+	.hpt .cancel a{
+		font-size: 1.5rem;
+	}
+}
+
+ /*
+     3840*1768  分辨率适配
+ */
+
+ @media screen and (min-width: 3840px){
+	 .hpt .tqimg{
+		 width:20%;
+	 }
+	 .hpt .toprq{
+		 font-size: 3.6rem;
+	 }
+	 .hpt .gudiv{
+		 font-size: 3.6rem;
+	 }
+	 .hpt .cancel a{
+		 font-size: 4.3rem;
+	 }
+	 .edu .tqimgdiv_edu{
+		 width:100%;
+	 }
+	 .edu .edu-itemtitle{
+		 width:46%;
+		 height: 80px;
+	 }
+	 .edu .edu-itemtitle p{
+		 font-size: 5rem;
+	 }
+	 .edu .describe{
+		 font-size: 5rem;
+	 }
+	 .edu .number{
+		 font-size: 5.5rem;
+	 }
+	 .edu .number .wy{
+		 font-size: 4.8rem;
+	 }
+	 .edu .describeMarLR{
+		 margin-top:0;
+	 }
+	 .edu .edu-itemtitle-jyfx{
+		 width: 9%;
+		 height: 80px;
+	 }
+	 .edu .edu-itemtitle-jyfx p{
+		 font-size: 5.2rem;
+	 }
+	 .edu .edu-itemtitle2{
+		 width: 25%;
+		 height: 80px;
+	 }
+	 .edu .edu-itemtitle2 p{
+		 font-size: 5rem;
+	 }
+	 .edu .butBor .pFx{
+		 margin-top: -32px;
+	 }
+	 .edu .itembodys1 .cost{
+		 font-size: 4.8rem;
+	 }
+	 .edu .itembodys1 .cost-number{
+		 font-size: 4.8rem;
+	 }
+	 .edu .itembodys1 .cost-w{
+		 font-size: 4rem;
+	 }
+	 .edu .itembodys1 .newstudent{
+		 font-size: 3.8rem;
+	 }
+	 .edu .itembodys1 .newstudent-number{
+		 font-size: 4.4rem;
+	 }
+	 .edu .itembodys1 .newstudent-wy{
+		 font-size: 3.8rem;
+	 }
+	 .edu .edu-itemtitle3{
+		 width: 31%;
+		 height: 80px;
+	 }
+	 .edu .edu-itemtitle3 p{
+		 font-size: 5rem;
+	 }
+	 .edu .itembodys3-right .groupNews{
+		 margin-top: 4%;
+	 }
+	 .edu .itembodys3-right .groupNews a{
+		 font-size: 4rem;
+	 }
+	 .edu .edu-itemtitle3-top5{
+		 height: 80px;
+	 }
+	 .edu .edu-itemtitle3-top5 p{
+		 font-size: 5rem;
+	 }
+	 .edu .schoolKindergarten{
+		 height: 63px;
+	 }
+	 .edu .schoolKindergarten .school{
+		 height: 63px;
+	 }
+	 .edu .schoolKindergarten .school label{
+		 font-size: 4rem;
+	 }
+	 .edu .schoolKindergarten .kindergarten{
+		 height: 63px;
+	 }
+	 .edu .schoolKindergarten .kindergarten label{
+		 font-size: 4rem;
+	 }
+
+	/*子页面*/
+	 .edus .checkboxfs{
+		 font-size: 6rem;
+	 }
+	 .stu .tqimgdiv_stu{
+		 width: 100%;
+	 }
+	 .hpt .btnss{
+		 width: 6%;
+		 height: 72px;
+		 line-height: 72px;
+		 padding-left: 1.5%;
+	 }
+	 body{
+		 font-size: 3rem;
+	 }
+	 table, tr{
+		 height: 80px;
+	 }
+     .icheckbox_square-green.hover{
+         background-position:-65px !important;
+     }
+     .icheckbox_square-green.checked{
+     background-position: -130px 0 !important;
+ }
+	 .icheckbox_square-green, .iradio_square-green{
+		 width: 59px !important;
+		 height: 64px !important;
+		 background-size: 640px 64px !important;
+		 margin-top: -1% !important;
+	 }
+
+	 .sum .tqimgdiv_sum{
+		 width: 100%;
+	 }
+
+	 .tui .tqimgdiv_tui{
+		 width: 100%;
+	 }
+	 .edu #border_b{
+		 height: 96%;
+	 }
+
+	 .dialog{
+		 top:40%;
+		 left:45%;
+	 }
+
+ }
+
+ /**
+    教育集团管理桌面 ---end
+ */

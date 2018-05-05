@@ -1,0 +1,168 @@
+﻿.logins{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/login/login_bg.jpg") 40% 90%;
+}
+
+.logins .logo{
+    background: url("../images/login/LOGO.png")no-repeat 50% 50% ;
+    width: 400px;
+    height: 80px;
+    margin-left: 50px;    opacity: 0;
+}
+.logins .content{
+    background: url("../images/login/loginbox.png")no-repeat 50% 40%;
+    width: 300px;
+    height: 330px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px 6px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.logins .content .login_title{
+    color: #dedede;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: 20px;
+}
+
+.logins .content .input-group{
+    height: 40px;
+    width: 100%;
+}
+
+/**
+  *放置input的div盒子
+  *1.此处应我的项目需要，加了些特别的设置，如字体、背景色等，按需添加；
+  *2.内层input不加边框，看起来效果会自然一点，所以外层div设置了边框和圆角
+*/
+.logins .box{
+    height: 40px;
+    width: 80%;
+    margin: 10% 20px 0;
+    border-radius: 6px;
+    text-align: center;
+    background: rgba(85, 102, 111, 0.3);
+}
+
+.logins .box .clearable{
+    width: 80%;
+    height: 40px;
+    background: rgba(85, 102, 111, 0.3);
+    padding: 3px;
+    text-align: center;
+    transition: background 0.4s;
+    color: #dedede;
+    border: none;
+    outline: none;
+    margin-left: 18%;
+}
+
+/**
+  *图标样式
+  *绝对定位，自定义颜色
+*/
+.logins .box .login_icon{
+    position: absolute;
+    width: 20%;
+    height: 40px;
+    left: 10%;
+}
+
+.logins .box .ac{
+    background:url('../images/login/ac_number.png') no-repeat left 10px center;
+}
+
+.logins .box .pd{
+    background:url('../images/login/ac_password.png') no-repeat left 10px center;
+}
+
+.logins  .login_btn {
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: rgba(1, 148, 255, 1.000);
+    color: #fff;
+    margin: 35px 5% 0;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* placeholder颜色  */
+.logins .box  input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+     color: #dedede;
+}
+.logins .box  input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: #dedede;
+}
+.logins .box  input::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: #dedede;
+}
+.logins .box  input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: #dedede;
+}
+
+.logins .msg {
+    position: absolute;
+    width: 350px;
+    height: 250px;
+    background: #FFF;
+    top: 35px;
+    left: -25px;
+    border-radius: 5px;
+    opacity:0;
+}
+
+.logins .qx_title {
+    width: 100%;
+    height: 40px;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.logins .msg .item{
+    padding: 10px 20px;
+}
+.logins .msg .btns{
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    border: 0;
+    background: #539ee4;
+    color: #fff;
+    outline: none;
+    text-align: center;
+    margin-left: 37%;
+    margin-top: 30px;
+}
+
+.logins .msg_zh {
+    position: relative;
+    width: 350px;
+    height: 40px;
+    background: #FFF;
+    left: -25px;
+    top: 45px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #de2929;
+}

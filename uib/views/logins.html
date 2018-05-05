@@ -1,0 +1,28 @@
+﻿<style>
+
+</style>
+<title>大屏登录界面</title>
+<div class="logins " ng-controller="loginsCtrl">
+    <div class="logo"></div>
+    <div class="content">
+        <form>
+            <div class="login_title">大屏登录</div>
+            <div class="box">
+                <input class="clearable" type="text" ng-model="user" ng-change="acn()" id="user" placeholder="请输入账号" >
+                <i class="login_icon ac" ></i>
+            </div>
+            <div class="box">
+                <input class="clearable" type="password" ng-model="psw" ng-change="acn()" id="psw"  placeholder="请输入密码" >
+                <i class="login_icon pd" ></i>
+            </div>
+            <button type="submit" class="login_btn" ng-click="login()">登录</button>
+        </form>
+        <div class="msg" id="show_qx" ng-show="show_qx">
+            <div class="qx_title">温馨提示</div>
+            <div class="item">1、您暂未拥有查看该报表权限;</div>
+            <div class="item">2、若有其他技术问题，请联系集团信管中心BI小组技术人员：<span style="color: #539ee4">xxxxxxxxx</span>;</div>
+            <button class="btns" ng-click="click_qx()">确定</button>
+        </div>
+        <div class="msg_zh" id="msg_zh" ng-show="show_zh"> 账号或密码错误，请重新输入！  </div>
+    </div>
+</div>

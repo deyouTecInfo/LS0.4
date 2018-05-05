@@ -1,0 +1,317 @@
+<!-- <script src="./scripts/vendor/marquee/Marquee.js"></script>
+<script src="./scripts/vendor/jqueryRotate/jQueryRotate.2.2.js"></script>
+<script src="./scripts/vendor/jqueryRotate/jquery.easing.min.js"></script> -->
+<link href="./vendor/icheck/square/green.css" rel="stylesheet">
+<script src="./vendor/icheck/icheck.js"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a, img {
+        border: 0;
+    }
+    html, body{ margin:0; height:100%; }
+    #marquee2 {
+        width: 162px;
+        height: 324px;
+        overflow: hidden;
+    }
+
+    #marquee2 ul li {
+        height: 150px;
+    }
+
+    #marquee2 ul li img {
+        display: block;
+    }
+    .prints{
+        display: none;
+    }
+    @media print{
+        .tqgptop{
+            display: none;
+        }
+        .btngroup{
+            display: none;
+        }
+        .wygltb{
+            display: none;
+        }
+        .prints{
+            display: block;
+        }
+        .prtitle{
+            width: 96%;
+            height: 8%;
+            line-height: 200%;
+            text-align: center;
+            font-weight: bold;
+            /*font-style: 40px;*/
+        }
+        .prints table td{
+            border-style: solid;
+            border-width:  1px;
+            border-color:#217A8A ;
+            height: 30px;
+            line-height: 30px;
+            color:#FEFDFB ;
+        }
+    }
+    .col-md-6{
+        width: 80%;
+    }
+    .col-md-4{
+        width: 21%;
+    }
+    #border_b{
+        height: 92%;
+    }
+
+    html {
+        overflow-y: auto;
+    }
+    body {
+        margin: 0 !important;
+    }
+    .container-fluid {
+        padding: 0;
+    }
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    /*::-webkit-scrollbar:vertical
+    {
+        width: 0px;
+        height: 0px;
+    }*/
+    ::-webkit-scrollbar
+    {
+        width: 8px;
+        height: 10px;
+        background-color: rgba(0,0,0,0);
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    ::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0);
+    }
+    ::-webkit-scrollbar-track:hover
+    {
+        -webkit-box-shadow: inset 0 0 1px rgba(239,239,239,239);
+        border-radius: 10px;
+        background-color: rgba(239,239,239,239);
+    }
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #dfe6ec;
+    }
+
+
+</style>
+<!-- 登录页面 -->
+<div ng-show="!loginflag" style="padding: 260px 30%;text-align: center;height: 115%;position: absolute;z-index: 99999; background: #fff;">
+    <form class="bs-example bs-example-form" role="form">
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="用户名" ng-model="user" id="user">
+        </div>
+        <br>
+
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="password" class="form-control" placeholder="密码" ng-model="psw" id="psw">
+        </div>
+        <br>
+
+        <div class="btn btn-default" ng-click="login()">
+            登录
+        </div>
+    </form>
+</div>
+<!-- 主界面 -->
+<title>物业公司运营桌面</title>
+<div class="hpt pcm edus sum edu" ng-controller="summaryOfOperationsCtrl">
+    <!-- 对内版 -->
+    <!--全屏-->
+    <div class="duineiban">
+        <div class="tqgptop tpbg pcmtop"  >
+            <div class="left rqwztq">
+                <div style="width:100%;height:25%;"></div>
+                <div style="width:100%;height:75%;">
+                    <div class="left tqimg">
+                        <div style="width:100%;height:25%;"></div>
+                        <div class="tqimgdiv_sum"></div>
+                    </div>
+                    <div class="left topleft">
+                        <div style="width:100%;height:20%;"></div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;" ng-bind="rq"></span><span ng-bind="day"></span>
+                        </div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;"><span id="address1"></span></span><span
+                                style="padding-right:1.4rem;" id="ssd"></span><span id="tqzk"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right gphq">
+                <div class="cancel" style="height:30%;"><a ng-click="cancel()" href="">注销</a></div>
+                <div style="width:100%;height:25%;"></div>
+                <div class="pcmgp" style="">
+                    <div class="gudiv">
+                        <span>博实乐教育股票实时行情</span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;">今开：<span ng-bind="openprice"></span></span><span>最高：<span
+                            ng-bind="maxprice"></span></span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;" class="lefts">当前价：<span ng-bind="currentprice"></span></span><span>成交量：<span ng-bind="volume"></span>万股</span>
+                    </div>
+                </div>
+            </div>
+            <div class="center_bg sumPer_title"></div>
+        </div>
+        
+        <div class="btngroup">
+             <!-- <div class="btn1 btnss"  ng-click="print()"><img src="./assets/images/wygs/003.png">打印</div>
+             <div class="btn2 btnss"  ng-click="exportWYTable()"><img src="./assets/images/wygs/002.png">导出</div> -->
+             <div class="btn3 btnss back"  ng-click="gobacks()">&lt;&nbsp;返回</div>
+        </div>
+        <!-- <div style="width:200px;height:30px;border: 1px solid red;margin-left: 3%;">
+            <label for="">
+                <input class="checkboxinput" style="width:100px;height:100px;" type="checkbox" checked>
+               <p>国际学校</p> 
+            </label>
+        </div> -->
+        <div class="col-md-6" style="margin-left:3%;">
+            <div class="row">
+                <div>
+                    <label class="checkboxfs" style="width: 15%;float: left">
+                        <select id="area" style="background-color: #101846">
+                            <option >全部区域</option>
+                            <option ng-repeat="item in tbarea">{{item.qy}}</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <label class="checkboxfs" >
+                        <input id="international" class="checkboxinput" type="checkbox" checked>
+                        国际学校（<span>{{tbschool0}}</span>）
+                    </label>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <label class="checkboxfs">
+                        <input id="Bilingual" class="checkboxinput" type="checkbox" checked>
+                        双语学校（<span>{{tbschool1}}</span>）
+                    </label>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <label class="checkboxfs">
+                        <input id="Kindergarten" class="checkboxinput" type="checkbox" checked>
+                        幼儿园（<span>{{tbschool2}}</span>）
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <!-- <input class="checkboxinput" type="checkbox" checked> -->
+        <div class="wygltb">
+            <div class="table-head">
+                <table>
+                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                    <tr>
+                        <td class="wd_18" style="width: 18%">学校</td>
+                        <td class="wd_6" style="width: 6%">学校简称</td>
+                        <td class="wd_6" style="width: 6%">区域</td>
+                        <td class="wd_6" style="width: 6%">学校类型</td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(1,px1,tbdata)">学费总缴费<br>(万元)<span ng-if="show1"><span  ng-if="px1">   ↓</span><span  ng-if="!px1">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(2,px2,tbdata)">新生缴费<br>(万元)<span ng-if="show2"><span  ng-if="px2">   ↓</span><span  ng-if="!px2">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(3,px3,tbdata)">升读缴费<br>(万元) <span ng-if="show3"><span  ng-if="px3">   ↓</span><span  ng-if="!px3">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(9,px9,tbdata)">新生应缴费<br>人数<span ng-if="show9"><span  ng-if="px9">   ↓</span><span  ng-if="!px9">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(10,px10,tbdata)">升读应缴费<br>人数<span ng-if="show10"><span  ng-if="px10">   ↓</span><span  ng-if="!px10">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(11,px11,tbdata)">应缴费总<br>人数<span ng-if="show11"><span  ng-if="px11">   ↓</span><span  ng-if="!px11">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(5,px5,tbdata)">新生实缴费<br>人数<span ng-if="show5"><span  ng-if="px5">   ↓</span><span  ng-if="!px5">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(6,px6,tbdata)">升读实缴费<br>人数<span ng-if="show6"><span  ng-if="px6">   ↓</span><span  ng-if="!px6">   ↑</span></span></td>
+                        <td class="wd_6 cursors" style="width: 6%"  ng-click="descx(4,px4,tbdata)">实缴费总<br>人数<span ng-if="show4"><span  ng-if="px4">   ↓</span><span  ng-if="!px4">   ↑</span></span></td>
+                        <td class="wd_05 cursors" style="width: 5%"  ng-click="descx(7,px7,tbdata)">计划招生<br>人数<span ng-if="show7"><span  ng-if="px7">   ↓</span><span  ng-if="!px7">   ↑</span></span></td>
+                        <td class="wd_05 cursors" style="width: 5%"  ng-click="descx(8,px8,tbdata)">招生完成率<span ng-if="show8"><span  ng-if="px8">   ↓</span><span  ng-if="!px8">   ↑</span></span></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+                <div class="table-body" id="border_b">
+                <table style="width: 100%">
+                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                    <tr ng-repeat=" items in  tbdata">
+                        <td class="wd_18" style="width: 18%">{{items.school_name}}</td>
+                        <td class="wd_6" style="width: 6%">{{items.xxjc}}</td>
+                        <td class="wd_6" style="width: 6%">{{items.qu_name}}</td>
+                        <td class="wd_6" style="width: 6%">{{items.xxlx}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;">{{items.xfzjf}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;" ng-if="items.myd!=0 ">{{items.xsjf}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;" ng-if="items.myd!=0 ">{{items.sdjf}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;">{{items.xsyjfrs}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;">{{items.sdyjfrs}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;">{{items.yjfzrs}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;">{{items.xsjfrs}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;">{{items.sdjfrs}}</td>
+                        <td class="wd_6" style="width: 6%;text-align: right;padding-right: 1%;">{{items.jfzrs}}</td>
+                        <td class="wd_05" style="width: 5%;text-align: right;padding-right: 1%;">{{items.jhzsrs}}</td>
+                        <td class="wd_05" style="width: 5%;text-align: right;padding-right: 1%;">{{(items.zswcl*100).toFixed(2) +"%"}}</td>
+                    </tr>
+                    <tr >
+                        <td class="wd_18" colspan="4">{{heji.school_name}}</td>
+                        <!--<td class="wd_6">{{heji.xxjc}}</td>-->
+                        <!--<td class="wd_6">{{heji.qu_name}}</td>-->
+                        <!--<td class="wd_6">{{heji.xxlx}}</td>-->
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;">{{heji.xfzjf}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;" ng-if="heji.myd!=0 ">{{heji.xsjf}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;" ng-if="heji.myd!=0 ">{{heji.sdjf}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;">{{heji.xsyjfrs}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;">{{heji.sdyjfrs}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;">{{heji.yjfzrs}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;">{{heji.xsjfrs}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;">{{heji.sdjfrs}}</td>
+                        <td class="wd_6" style="text-align: right;padding-right: 1%;">{{heji.jfzrs}}</td>
+                        <td class="wd_05" style="text-align: right;padding-right: 1%;">{{heji.jhzsrs}}</td>
+                        <td class="wd_05" style="text-align: right;padding-right: 1%;">{{(heji.zswcl*100).toFixed(2) +"%"}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- <div class="prints wygltb">
+            <div class="prtitle">物业管公司运营桌面</div>
+            <table  >
+                <tr>
+                    <td class="wd_3">学校</td>
+                    <td class="wd_4">学费总缴费</td>
+                    <td class="wd_4 cursors"  ng-click="descx(1,px1,tbdata)">新生缴费<span ng-if="show1"><span  ng-if="px1">   ↓</span><span  ng-if="!px1">   ↑</span></span></td>
+                    <td class="wd_3 cursors"  ng-click="descx(3,px3,tbdata)">升读缴费 <span ng-if="show3"><span  ng-if="px3">   ↓</span><span  ng-if="!px3">   ↑</span></span></td>
+                    <td class="wd_3 cursors"  ng-click="descx(4,px4,tbdata)">缴费总人数<span ng-if="show4"><span  ng-if="px4">   ↓</span><span  ng-if="!px4">   ↑</span></span></td>
+                    <td class="wd_3 cursors"  ng-click="descx(4,px4,tbdata)">新生缴费人数<span ng-if="show4"><span  ng-if="px4">   ↓</span><span  ng-if="!px4">   ↑</span></span></td>
+                    <td class="wd_3 cursors"  ng-click="descx(4,px4,tbdata)">升读缴费人数<span ng-if="show4"><span  ng-if="px4">   ↓</span><span  ng-if="!px4">   ↑</span></span></td>
+                    <td class="wd_3 cursors"  ng-click="descx(4,px4,tbdata)">计划招生人数<span ng-if="show4"><span  ng-if="px4">   ↓</span><span  ng-if="!px4">   ↑</span></span></td>
+                    <td class="wd_3 cursors"  ng-click="descx(4,px4,tbdata)">招生完成率<span ng-if="show4"><span  ng-if="px4">   ↓</span><span  ng-if="!px4">   ↑</span></span></td>
+                </tr>
+                <tr ng-repeat=" items in  tbdata">
+                    <td class="wd_3">{{items.pm}}</td>
+                    <td class="wd_4">{{items.areaname}}</td>
+                    <td class="wd_4"  ng-if="items.myd!=0 ">{{items.myd+"%"}}</td>
+                    <td class="wd_3"  ng-if="items.myd!=0 ">{{items.myd+"%"}}</td>
+                    <td class="wd_3">{{items.sj | number}}</td>
+                    <td class="wd_3">{{items.sjl+"%"}}</td>
+                    <td class="wd_3">{{items.sjl+"%"}}</td>
+                    <td class="wd_3">{{items.sjl+"%"}}</td>
+                    <td class="wd_3">{{items.sjl+"%"}}</td>
+                </tr>
+            </table>
+        </div> -->
+    </div>
+</div>

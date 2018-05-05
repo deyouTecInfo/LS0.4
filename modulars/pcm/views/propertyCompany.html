@@ -1,0 +1,228 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a, img {
+        border: 0;
+    }
+    html, body{ margin:0; height:100%; }
+
+</style>
+<!-- 登录页面 -->
+<!-- 主界面 -->
+<div class="hpt pcm " ng-controller="propertyCompanyCtrl">
+    <!-- 对内版 -->
+    <!--全屏-->
+    <div class="duineiban">
+        <div ng-if="ispc">
+            <img ng-if="qp" class="qp" src="./assets/images/screen_w_k.png"   ng-click="screen()" />
+            <img ng-if="!qp" class="qp" src="./assets/images/screen_w_g.png"  ng-click="exitFullScreen()" />
+        </div>
+        <div class="tqgptop tpbg pcmtop">
+            <div class="left rqwztq">
+                <div style="width:100%;height:25%;"></div>
+                <div style="width:100%;height:75%;">
+                    <div class="left tqimg">
+                        <div style="width:100%;height:25%;"></div>
+                        <div class="tqimgdiv"></div>
+                    </div>
+                    <div class="left topleft">
+                        <div style="width:100%;height:20%;"></div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;" ng-bind="rq"></span><span ng-bind="day"></span>
+                        </div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;"><span id="address1"></span></span><span
+                                style="padding-right:1.4rem;" id="ssd"></span><span id="tqzk"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right gphq">
+                <div class="cancel" style="height:30%;"><a ng-click="cancel()" href="">注销</a></div>
+                <div style="width:100%;height:25%;"></div>
+                <div class="pcmgp"    >
+                    <div class="gudiv">
+                        <span>碧桂园(02007)港股实时行情</span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;">今开：<span ng-bind="openprice"></span></span><span>最高：<span
+                            ng-bind="maxprice"></span></span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;" class="lefts">当前价：<span
+                                ng-bind="currentprice"></span></span><span>成交量：<span ng-bind="volume"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="center_bg"><div class="qiehuan" ng-click="qiehuan()"></div></div>
+        </div>
+        <div class=" pc_content">
+            <div class="pc_left">
+                <div class="left_item1">
+                    <div class="left_item1_1">
+                        <div class="card1">
+                            <div>收缴</div>
+                            <div ><span ng-bind="sjje">99,226.18</span>万 | <span ng-bind="sjl">85</span>%</div>
+                            <div>目标：<span ng-bind="sjmb">85</span>%</div>
+                        </div>
+                    </div>
+                    <div class="left_item1_2">
+                        <div class="left_item1_2_title_1">
+                            <span class="pc_title_jbfont">本月实收</span>
+                            <span class="pc_title_font1 pc_padding" id="jyzt_byys" >{{jyzt_byys}}</span>
+                            <span class="pc_title_jbfont pc_title_font2">万元</span>
+                        </div>
+                        <div class="left_item1_2_title_2">
+                            <span>本年实收</span>
+                            <span class="pc_title_font3 pc_padding2" id="jyzt_bnljss"  ng-bind="jyzt_bnljss" >99663.82</span>
+                            <span class="pc_title_font4">万元</span>
+
+                            <span class="" style="padding-left: 4%">本日实收</span>
+                            <span class="pc_title_font3 pc_padding2" id="jyzt_brss"  ng-bind="jyzt_brss">428.82</span>
+                            <span class="pc_title_font4">万元</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="left_item2">
+                    <div class="left_item2_card">
+                        <div class="card1 card1bg">
+                            <div>已收楼收缴</div>
+                            <div><span ng-bind="yslsjje">99,226.18</span>万 | <span ng-bind="yslsjl">85</span>%</div>
+                            <div>目标：<span ng-bind="mbyslsjl">85</span>%</div>
+                        </div>
+                    </div>
+                    <div class="left_item2_card left_item2_card_2 ">
+                        <div class="card1 card1bg">
+                            <div>追缴</div>
+                            <div><span ng-bind="zjje">99,226.18</span>万 |  <span ng-bind="zjl">85</span>%</div>
+                            <div>年初： <span ng-bind="ncwnqf">85</span>万</div>
+                        </div>
+                    </div>
+                    <div class="gssjje" >
+                        <div class="gssjje_title">
+                            <span class="gos" ng-click="gopcm3()" >各区域收缴金额分布</span>
+                            <span>单位：万元</span>
+                        </div>
+                        <div id="gssjje"></div>
+                    </div>
+                </div>
+                <div class="left_item3">
+                    <div class="left_item3_1">
+                        <div class="pmtitle"  >区域收缴率排名<span ng-bind="sjpm"  ng-class="{true:'color5',false:'color3' }[bfives]" >前五</span></div>
+                        <table class="qysjlpm pmtb">
+                                <tr class="color1">
+                                    <td>排名</td>
+                                    <td>区域</td>
+                                    <td>综合收缴率</td>
+                                    <td>已收收缴率</td>
+                                    <td>应收未收收缴率</td>
+                                    <td>空置收缴率</td>
+                                </tr>
+                            <tr ng-repeat="item in SJSJ">
+                                <td   ng-class="tbclass(item.pmbd)" style="text-align: left;padding-left: 2%; "  >
+                                    <!--<span class="color2">{{$index+1}}</span>-->
+                                    <span class="color2">{{item.pmqk}}</span>
+                                    <span ng-class="tbclass(item.pmbd)" >
+                                            <span ng-if="item.pmbd>0">↑ {{item.pmbd}}</span>
+                                            <span ng-if="item.pmbd<0">↓ {{item.pmbd}}</span >
+                                            <span ng-if="item.pmbd==0">-- </span >
+                                    </span>
+                                </td>
+                                <td class="color2">{{item.areaname}}</td>
+                                <td>{{item.zh+'%'}}</td>
+                                <td>{{item.ys+'%'}}</td>
+                                <td>{{item.ysws+'%'}}</td>
+                                <td>{{item.kz+'%'}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="left_item3_1 left_item3_2">
+                        <div class="pmtitle"  >区域追缴率排名<span ng-bind="sjpm" ng-class="{true:'color5',false:'color3' }[bfives]">前五</span></div>
+                        <table class="qyzjlpm pmtb">
+                                <tr class="color1">
+                                    <td>排名</td>
+                                    <td>区域</td>
+                                    <td>综合收缴率</td>
+                                    <td>已收收缴率</td>
+                                    <td>应收未收收缴率</td>
+                                    <td>空置收缴率</td>
+                                </tr>
+                            <tr ng-repeat="itemS in ZJSJ">
+                                <td   ng-class="tbclass(itemS.pmbd)" style="text-align: left;padding-left: 2%; "  >
+                                    <!--<span class="color2">{{$index+1}}</span>-->
+                                    <span class="color2">{{itemS.pmqk}}</span>
+                                    <span ng-class="tbclass(itemS.pmbd)" >
+                                            <span ng-if="itemS.pmbd>0">↑ {{itemS.pmbd}}</span>
+                                            <span ng-if="itemS.pmbd<0">↓ {{itemS.pmbd}}</span >
+                                            <span ng-if="itemS.pmbd==0">-- </span >
+                                    </span>
+                                </td>
+                                <td class="color2">{{itemS.areaname}}</td>
+                                <td>{{itemS.zh+'%'}}</td>
+                                <td>{{itemS.ys+'%'}}</td>
+                                <td>{{itemS.ysws+'%'}}</td>
+                                <td>{{itemS.kz+'%'}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="pc_right">
+                <!--收款方式-->
+                <div class="pc_right_item1">
+                    <!--<div class="gssjje_title">-->
+                        <!--<span>收款方式</span>-->
+                        <!--<span>单位：万元</span>-->
+                    <!--</div>-->
+                    <div class="skfs_title">
+                        <span>收款方式</span>
+                        <span>单位：万元</span>
+                    </div>
+                    <div id="skfs"></div>
+                </div>
+
+                <div class="pc_right_item2">
+                    <div class="pc_right_item2_1">
+                        <div class="list1">车位</div>
+                        <div class="list2">
+                            <span>数量</span>
+                            <span ng-bind="cwsl">44.40</span >
+                            <span>万个</span>
+                        </div>
+                        <div class="list2 ">
+                            <span>收入</span>
+                            <span ng-bind="cwsr" style="padding-right: 27px;">8973.77</span >
+                            <span>万</span>
+                        </div>
+                    </div>
+                    <div class="pc_right_item2_2">
+                        <div class="list3">
+                            <span class="sp1">车位物业费</span>
+                            <div class="sp2" ><span ng-bind="cwwyf">1,159</span> <span class="sp3">万</span></div >
+                        </div>
+                        <div class="list3">
+                            <span class="sp1">车位服务费</span>
+                            <span class="sp2"><span  ng-bind="cwfwf">667</span> <span class="sp3">万</span></span >
+                        </div>
+                        <div class="list3">
+                            <span class="sp1">车位使用费</span>
+                            <span class="sp2" ><span ng-bind="cwsyf">2,159</span> <span class="sp3">万</span></span >
+                         </div>
+                        <div class="list3">
+                            <span class="sp1">临时停车费</span>
+                            <span class="sp2" ><span ng-bind="cwlstcf">1,400</span>  <span class="sp3">万</span></span >
+
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </div>
+</div>

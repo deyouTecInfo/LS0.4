@@ -1,0 +1,150 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a, img {
+        border: 0;
+    }
+    html, body{ margin:0; height:100%; }
+</style>
+
+<!-- 主界面 -->
+<div class="hpt pcm" ng-controller="propertyCompanytwoCtrl">
+    <!-- 对内版 -->
+    <!--全屏-->
+    <div class="wygs">
+        <div ng-if="ispc">
+            <img ng-if="qp" class="qp" src="./assets/images/screen_w_k.png"    ng-click="screen()" />
+            <img ng-if="!qp" class="qp" src="./assets/images/screen_w_g.png"   ng-click="exitFullScreen()" />
+        </div>
+        <div class="tqgptop tpbg pcmtop">
+            <div class="left rqwztq">
+                <div style="width:100%;height:25%;"></div>
+                <div style="width:100%;height:75%;">
+                    <div class="left tqimg">
+                        <div style="width:100%;height:25%;"></div>
+                        <div class="tqimgdiv"></div>
+                    </div>
+                    <div class="left topleft">
+                        <div style="width:100%;height:20%;"></div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;" ng-bind="rq"></span><span ng-bind="day"></span>
+                        </div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;"><span id="address1"></span></span><span
+                                style="padding-right:1.4rem;" id="ssd"></span><span id="tqzk"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right gphq">
+                <div class="cancel" style="height:30%;"><a ng-click="cancel()" href="">注销</a></div>
+                <div style="width:100%;height:25%;"></div>
+                <div class="pcmgp"    >
+                    <div class="gudiv">
+                        <span>碧桂园(02007)港股实时行情</span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;">今开：<span ng-bind="openprice"></span></span><span>最高：<span
+                            ng-bind="maxprice"></span></span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;" class="lefts">当前价：<span
+                                ng-bind="currentprice"></span></span><span>成交量：<span ng-bind="volume"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="center_bg"><div class="qiehuan" ng-click="qiehuan()"></div></div>
+        </div>
+        <div class="pc2_centers">
+            <div class="pc2_content">
+                <div class="pc2_content_left">
+                    <div class="pc2_content_left_1">
+                        <div class="item01" style="margin: 0">
+                            <div class="card2" >
+                                <div>接管面积（万/㎡）</div>
+                                <div>{{jgmj}}</div>
+                                <div><img  src="./modulars/pcm/assets/images/015.png" style="margin-top: -3px;" >{{jgmjhb}}</div>
+                            </div>
+                        </div>
+                        <div class="item01">
+                            <div class="card2">
+                                <div>业主数（户）</div>
+                                <div>{{yzs}}</div>
+                                <div><img  src="./modulars/pcm/assets/images/015.png" style="margin-top: -3px;" >{{yzshb}}</div>
+                            </div>
+                        </div>
+                        <div class="item01">
+                            <div class="card2">
+                                <div>项目数（个）</div>
+                                <div>{{xms}}</div>
+                                <div><img  src="./modulars/pcm/assets/images/015.png" style="margin-top: -3px;" >{{xmshb}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc2_content_left_2">
+                        <div class="gsjg_title"  id="gsjgmj"  ng-show ="gsjgmj">
+                            <span class="titles"  >各省接管面积分布</span>
+                            <span class="dw1_1"  >接管面积：万㎡</span>
+                        </div>
+                        <div class="gsjg_title" id="gsjgxm" ng-show ="!gsjgmj" >
+                            <span class="titles"    >各省接管项目数分布</span>
+                            <span class="dw1">接管项目数：个</span>
+                        </div>
+                        <div id="gsjg"></div>
+                    </div>
+                </div>
+                <div class="pc2_content_right">
+                    <div class="gsjg_title">
+                        <span   class="titles gosq"   ng-click="showcatable()">接管情况 </span></span>
+                    </div>
+                    <div class="catable" ng-if="catable" >
+                        <div class="header">
+                            <span class="title">接管情况散点图详细数据</span>
+                            <img  class="img" src="./modulars/pcm/assets/images/close.png" alt="关闭" ng-click="clsecatable()">
+                        </div>
+                        <div class="wygltb" style="width: 100%;height: 90%;margin: 0">
+                            <div class="table-head">
+                                <table>
+                                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                                    <tr>
+                                        <td class="wd_2">区域</td>
+                                        <td class="wd_1">接管面积（万平）</td>
+                                        <td class="wd_1">接管项目（个）</td>
+                                        <td class="wd_1">接管户数（万户）</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="table-body">
+                                <table>
+                                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                                    <tr  ng-repeat="item in catabledata">
+                                        <td class="wd_2" ng-bind="item.areaname">区域</td>
+                                        <td class="wd_1" ng-bind="item.jgmj">接管面积</td>
+                                        <td class="wd_1" ng-bind="item.jgxms">接管项目</td>
+                                        <td class="wd_1" ng-bind="item.jghs">接管户数</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="jgmj"></div>
+                </div>
+            </div>
+            <div class="pc2_bottom">
+                <div class="gsjg_title" id="qyjggc" ng-if="qyjggc">
+                    <span class="titles" >各区域接管面积构成</span>
+                    <span class="dw2">单位：万㎡</span>
+                </div>
+                <div class="gsjg_title" id="qyjgxm" ng-if="!qyjggc">
+                    <span class="titles"  >各区域接管项目数</span>
+                    <span class="dw2_1" >单位：个</span>
+                </div>
+                <div id="qyjg"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<style>
+
+</style>
+<script src="vendor/swiper/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<div class="carousels "  ng-class="{'carousels_2':show_dwon,'carousels_3':showno,'carousels_4':!showno,} ">
+    <!--向上箭头-->
+    <div class="dwon_img"  ng-if="show_dwon" >
+        <img class="icon" ng-click="show_setting(1)"   src='./assets/images/carousel/up.png'>
+    </div>
+    <!--轮播图片-->
+    <div class="sohw_carousels_set"   ng-class="{false: 'onePX'}[!show_dwon]">
+        <div class="up_img"  >
+            <img class="icon" ng-click="show_setting(2)"   src='./assets/images/carousel/down.png'>
+        </div>
+        <div class="sohw_carousels">
+            <div class="set_img"  >
+                <i class=" set_icon" ng-click="show_setting(3)"></i>
+            </div>
+            <div id="marquee1" class="swiper-container carousels_num">
+                <div class="swiper-wrapper" >
+                    <div class="swiper-slide"  data-hash="{{item.url}}"  ng-repeat="item in img_carousel track by $index" >
+                        <div class="show_choose" ng-if="$index==activeIndex"><img class="choose" src="./assets/images/carousel/selected.png"></div>
+                        <div class="show_img"><img src="./assets/images/carousel/{{item.src}}.jpg" alt="{{item.name}}"   ></div>
+                        <span class="img_title">{{item.name}}</span>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--设置界面-->
+<div class="seting">
+    <div class="zhezhao" ng-if="show_choose"></div>
+    <div class="show_choose" ng-show="show_choose">
+        <div class="l1">设置<i class="close" ng-click="show_setting(4)" alt="关闭" ></i></div>
+        <div class="l2">
+            <div class="item item1 ">
+                <div class="item_title">选择大屏</div>
+                <div class="item_content">
+                    <ul >
+                        <li ng-repeat=" item in img_choose track by $index"  class="list" ng-click="fn_choose(item)">
+                            <img ng-if="item.choose=='1'" class="choose" src="./assets/images/carousel/selected.png">
+                            <img src="./assets/images/carousel/{{item.src}}.jpg"><span>{{item.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item2"><i class="btn leftarrow"></i> </div>
+            <div class="item item3">
+                <div class="item_title">以屏幕编码顺序滚动播放(可拖动变换位置)</div>
+                <div class="item_content" >
+                    <ul id="sortable_items"  >
+                        <li class="list list_2"   ng-repeat="item in img_carousel track by $index">
+                            <div class="list_index" >{{$index+1}}</div>
+                            <div class="list_content">
+                                <img src="./assets/images/carousel/{{item.src}}.jpg">
+                                <span>{{item.name}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--<div class="l3">-->
+            <!--<i class="btn confirm"></i>-->
+            <!--<i class="btn cansel" ng-click="show_setting(4)" alt="取消"></i>-->
+        <!--</div>-->
+        <div class="l4">
+            <div class="l4_title">设置时长</div>
+            <div class="l4_content">
+                <span>每张间隔</span>
+                <input type="number" ng-model="hour" ng-change="changTime()"><span>小时 </span>
+                <input type="number" ng-model="min"  ng-change="changTime()"><span>分 </span>
+                <input type="number" ng-model="sec"  ng-change="changTime()"><span>秒 </span>
+                滚动播放
+            </div>
+        </div>
+        <div class="l5">
+            <i class="btn confirm" ng-click="show_setting(4)" alt="确认"></i>
+            <i class="btn cansel" ng-click="show_setting(4)" alt="取消"></i>
+        </div>
+    </div>
+</div>
+
+

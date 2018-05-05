@@ -1,0 +1,257 @@
+<!-- <script src="./scripts/vendor/marquee/Marquee.js"></script>
+<script src="./scripts/vendor/jqueryRotate/jQueryRotate.2.2.js"></script>
+<script src="./scripts/vendor/jqueryRotate/jquery.easing.min.js"></script> -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a, img {
+        border: 0;
+    }
+    html, body{ margin:0; height:100%; }
+    #marquee2 {
+        width: 162px;
+        height: 324px;
+        overflow: hidden;
+    }
+
+    #marquee2 ul li {
+        height: 150px;
+    }
+
+    #marquee2 ul li img {
+        display: block;
+    }
+    .prints{
+        display: none;
+    }
+    @media print{
+        .tqgptop{
+            display: none;
+        }
+        .btngroup{
+            display: none;
+        }
+        .wygltb{
+            display: none;
+        }
+        .prints{
+            display: block;
+        }
+        .prtitle{
+            width: 96%;
+            height: 8%;
+            line-height: 200%;
+            text-align: center;
+            font-weight: bold;
+            /*font-style: 40px;*/
+        }
+        .prints table td{
+            border-style: solid;
+            border-width:  1px;
+            border-color:#217A8A ;
+            height: 30px;
+            line-height: 30px;
+            color:#FEFDFB ;
+        }
+    }
+
+    .blue{
+        background-color: #172c60;
+        cursor: pointer;
+    }
+
+    html {
+        overflow-y: auto;
+    }
+    body {
+        margin: 0 !important;
+    }
+    .container-fluid {
+        padding: 0;
+    }
+    #back{
+        margin-top: -40px;
+    }
+
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    /*::-webkit-scrollbar:vertical
+    {
+        width: 0px;
+        height: 0px;
+    }*/
+    ::-webkit-scrollbar
+    {
+        width: 10px;
+        height: 10px;
+        background-color: rgba(0,0,0,0);
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    ::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0);
+    }
+    ::-webkit-scrollbar-track:hover
+    {
+        -webkit-box-shadow: inset 0 0 1px rgba(239,239,239,239);
+        border-radius: 10px;
+        background-color: rgba(239,239,239,239);
+    }
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #dfe6ec;
+    }
+
+
+</style>
+<!-- 登录页面 -->
+<div ng-show="!loginflag" style="padding: 260px 30%;text-align: center;height: 115%;position: absolute;z-index: 99999; background: #fff;">
+    <form class="bs-example bs-example-form" role="form">
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="用户名" ng-model="user" id="user">
+        </div>
+        <br>
+
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="password" class="form-control" placeholder="密码" ng-model="psw" id="psw">
+        </div>
+        <br>
+
+        <div class="btn btn-default" ng-click="login()">
+            登录
+        </div>
+    </form>
+</div>
+<!-- 主界面 -->
+<title>物业公司运营桌面</title>
+<div class="hpt pcm tui edu" ng-controller="tuitionProportionCtrl">
+    <!-- 对内版 -->
+    <!--全屏-->
+    <div class="duineiban">
+        <div class="tqgptop tpbg pcmtop"  >
+            <div class="left rqwztq">
+                <div style="width:100%;height:25%;"></div>
+                <div style="width:100%;height:75%;">
+                    <div class="left tqimg">
+                        <div style="width:100%;height:25%;"></div>
+                        <div class="tqimgdiv_tui"></div>
+                    </div>
+                    <div class="left topleft">
+                        <div style="width:100%;height:20%;"></div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;" ng-bind="rq"></span><span ng-bind="day"></span>
+                        </div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;"><span id="address1"></span></span><span
+                                style="padding-right:1.4rem;" id="ssd"></span><span id="tqzk"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right gphq">
+                <div class="cancel" style="height:30%;"><a ng-click="cancel()" href="">注销</a></div>
+                <div style="width:100%;height:25%;"></div>
+                <div class="pcmgp" style="">
+                    <div class="gudiv">
+                        <span>博实乐教育股票实时行情</span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;">今开：<span ng-bind="openprice"></span></span><span>最高：<span
+                            ng-bind="maxprice"></span></span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;" class="lefts">当前价：<span ng-bind="currentprice"></span></span><span>成交量：<span ng-bind="volume"></span>万股</span>
+                    </div>
+                </div>
+            </div>
+            <div class="center_bg tuiPro_title"></div>
+        </div>
+        <div class="btngroup">
+             <!-- <div class="btn1 btnss"  ng-click="print()"><img src="./assets/images/wygs/003.png">打印</div>
+             <div class="btn2 btnss"  ng-click="exportWYTable()"><img src="./assets/images/wygs/002.png">导出</div> -->
+             <div class="btn3 btnss back" id="back"  ng-click="gobacks()">&lt;&nbsp;返回</div>
+        </div>
+        <div class="wygltb">
+            <div class="table-head">
+                <table >
+                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                    <tr>
+                        <td class="wd_3" style="width: 40%"> 学段</td>
+                        <td class="wd_2 cursors" style="width:30% "  ng-click="descx(1,px1,tbdata)">学费(万元)<span ng-if="show1"><span  ng-if="px1">   ↓</span><span  ng-if="!px1">   ↑</span></span></td>
+                        <td class="wd_1 cursors" style="width:30% "  ng-click="descx(2,px2,tbdata)">所占百分比<span ng-if="show2"><span  ng-if="px2">   ↓</span><span  ng-if="!px2">   ↑</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-body" style="height: 100%;overflow: auto">
+                <table ng-repeat=" items in  tbdata">
+                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                        <tr ng-click="school($index)" class="blue">
+                            <td class="wd_3" style="width:40%;"><span style="float: left" ng-if="$index!=slide">➕</span><span style="float: left;" ng-if="$index == slide"><span ng-if="slidd" >➕</span><span ng-if="!slidd">➖</span></span>{{items.xd1}}</td>
+                            <td class="wd_2" style="width:30%;">{{items.xf}}</td>
+                            <td class="wd_1" style="width:30%;">{{(items.bfb *100).toFixed(2)  +"%"}}</td>
+                        </tr>
+                        <tbody ng-if="$index == blue">
+                            <tr ng-repeat=" item in  xddata">
+                                <td class="wd_3" style="width:40%;">{{item.xx}}</td>
+                                <td class="wd_2" style="width:30%;">{{item.xf}}</td>
+                                <td class="wd_1" style="width:30%;">{{(item.zb *100).toFixed(2)  +"%"}}</td>
+                            </tr>
+                        </tbody>
+
+                </table>
+                <table>
+                    <tr >
+                        <td class="wd_3" style="width:40%;">{{heji.xd1}}</td>
+                        <td class="wd_2" style="width:30%;">{{heji.xf}}</td>
+                        <td class="wd_1" style="width:30%;">{{(heji.bfb *100).toFixed(2)  +"%"}}</td>
+                    </tr>
+                </table>
+            </div>
+            <!--<div class="table-head">
+                <table >
+                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                    <tr>
+                        <td class="wd_3">学校</td>
+                        <td class="wd_2 cursors"  ng-click="descx1(1,px1,xddata)">学费(万元)<span ng-if="show1"><span  ng-if="px1">   ↓</span><span  ng-if="!px1">   ↑</span></span></td>
+                        <td class="wd_1 cursors"  ng-click="descx1(2,px2,xddata)">所占百分比<span ng-if="show2"><span  ng-if="px2">   ↓</span><span  ng-if="!px2">   ↑</span></span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-body" style="height: 43%">
+                <table>
+                    <colgroup><col style="width: 80px;" /><col /></colgroup>
+                    <tr ng-repeat=" items in  xddata">
+                        <td class="wd_3">{{items.xx}}</td>
+                        <td class="wd_2">{{items.xf}}</td>
+                        <td class="wd_1">{{(items.zb *100).toFixed(2)  +"%"}}</td>
+                    </tr>
+                </table>
+            </div>-->
+        </div>
+        <!-- <div class="prints wygltb"> 
+            <div class="prtitle">物业管公司运营桌面</div>
+            <table  >
+                <tr>
+                    <td class="wd_3">学段</td>
+                    <td class="wd_2">学费</td>
+                    <td class="wd_1"  ng-click="descx(4,px4,tbdata)">所占百分比<span ng-if="show4"><span  ng-if="px4">   ↓</span><span  ng-if="!px4">   ↑</span></span></td>
+                </tr>
+                <tr ng-repeat=" items in tbdata">
+                    <td class="wd_3">{{items.pm}}</td>
+                    <td class="wd_2">{{items.areaname}}</td>
+                    <td class="wd_1">{{items.sjl+"%"}}</td>
+                </tr>
+            </table>
+        </div> -->
+    </div>
+</div>

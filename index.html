@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    	<meta name="apple-mobile-web-app-capable" content="yes" /><!-- home screen app 全屏 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 状态栏 -->
+    	<meta name="viewport" content="application, width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/logins.css?v=1.03"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css?v=1.03"/>
+		<link rel="stylesheet" type="text/css" href="modulars/pcm/assets/css/pcm.css?v=1.03"/>
+		<link rel="stylesheet" type="text/css" href="modulars/edu/assets/css/style.css?v=1.03"/>
+		<link rel="stylesheet" type="text/css" href="modulars/price/assets/css/style.css?v=1.03"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/animate.css?v=1.03">
+		<link rel="stylesheet" type="text/css" href="assets/css/carousel.css?v=1.03">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap/bootstrap.css?v=1.03"/>
+		<link rel="stylesheet" type="text/css" href="vendor/swiper/swiper.min.css?v=1.03"/>
+        <script src="vendor/sortable/Sortable.js" type="text/javascript" charset="utf-8"></script>
+        <script src="vendor/swiper/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="apple-touch-icon" sizes="144x144" href="icon-01.png" />
+	   	<!-- <script type="text/javascript" data-main="main-built.js" src="scripts/vendor/requirejs/require.js"></script> -->
+	</head>
+	<body class="indexbg">
+		<div class="container-fluid"  ng-controller="mainCtrl" >
+            <title>集团管理桌面</title>
+			<div style="width:100%;background-color:white;" class="dialogddd">
+				<div class="dialog">加载中<img src="assets/images/jz.gif"/></div>
+			</div>
+			<div class="overlayer"></div>
+	        <div  ui-view>
+
+	        </div>
+            <mycarousel ng-if="loginflag"></mycarousel>
+	    </div>
+	</body>
+    <script src="vendor/tools/base64.js" type="text/javascript" charset="utf-8"></script>
+    <script src="utils/mapboundary.js" type="text/javascript" charset="utf-8"></script>
+    <script src="vendor/echarts/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="vendor/countUp/countUp.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="vendor/echarts/china.js" type="text/javascript" charset="utf-8"></script>
+    <script src="vendor/echarts/world.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=WGum7BIRpYcRuj5yYGXIcPoca4IBRijv"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script type="text/javascript" data-main="utils/main" src="vendor/requirejs/require.js"></script>
+
+</html>

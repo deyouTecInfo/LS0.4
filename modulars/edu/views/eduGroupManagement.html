@@ -1,0 +1,333 @@
+<!-- <script src="./scripts/vendor/marquee/Marquee.js"></script>
+<script src="./scripts/vendor/jqueryRotate/jQueryRotate.2.2.js"></script>
+<script src="./scripts/vendor/jqueryRotate/jquery.easing.min.js"></script> -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a, img {
+        border: 0;
+    }
+    html, body{ margin:0; height:100%; }
+    #marquee2 {
+        width: 162px;
+        height: 324px;
+        overflow: hidden;
+    }
+
+    #marquee2 ul li {
+        height: 150px;
+    }
+
+    #marquee2 ul li img {
+        display: block;
+    }
+</style>
+<!-- 登录页面 -->
+<div ng-show="!loginflag" style="padding: 260px 30%;text-align: center;height: 115%;position: absolute;z-index: 99999; background: #fff;">
+    <form class="bs-example bs-example-form" role="form">
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="用户名" ng-model="user" id="user">
+        </div>
+        <br>
+
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="password" class="form-control" placeholder="密码" ng-model="psw" id="psw">
+        </div>
+        <br>
+
+        <div class="btn btn-default" ng-click="login()">
+            登录
+        </div>
+    </form>
+</div>
+<!-- 主界面 -->
+<div class=" edu hpt pcm" ng-controller="eduGroupManagementCtrl">
+    <!-- 对内版 -->
+    <!--全屏-->
+    <div class="wygs">
+        <div ng-if="ispc">
+            <img ng-if="qp" src="./assets/images/screen_w_k.png"  style="cursor: pointer;position: absolute;right: 3%;top: 4%;width: 28px;z-index: 999;"
+                 ng-click="screen()" />
+            <img ng-if="!qp" src="./assets/images/screen_w_g.png"
+                 style="cursor: pointer;position: absolute;right: 3%;top: 4%;width: 28px;z-index: 999;"
+                 ng-click="exitFullScreen()" />
+        </div>
+        <div class="tqgptop tpbg pcmtop">
+            <div class="left rqwztq">
+                <div style="width:100%;height:25%;"></div>
+                <div style="width:100%;height:75%;">
+                    <div class="left tqimg">
+                        <div style="width:100%;height:25%;"></div>
+                        <div class="tqimgdiv_edu"></div>
+                    </div>
+                    <div class="left topleft">
+                        <div style="width:100%;height:20%;"></div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;" ng-bind="rq"></span><span ng-bind="day"></span>
+                        </div>
+                        <div class="toprq">
+                            <span style="padding-right:1.4rem;"><span id="address1"></span></span><span
+                                style="padding-right:1.4rem;" id="ssd"></span><span id="tqzk"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right gphq">
+                <div class="cancel" style="height:30%;margin-top: 1%; margin-right: -5%;"><a ng-click="cancel()" href="">注销</a></div>
+                <div style="width:100%;height:25%;"></div>
+                <div class="pcmgp pcmgqMr"    >
+                    <div class="gudiv">
+                        <span>博实乐教育股票实时行情</span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;">今开：<span ng-bind="openprice"></span></span><span>最高：<span
+                            ng-bind="maxprice"></span></span>
+                    </div>
+                    <div class="gudiv">
+                        <span style="padding-right:0.7rem;" class="lefts">当前价：<span
+                                ng-bind="currentprice"></span></span><span>成交量：<span ng-bind="volume"></span>万股</span>
+                    </div>
+                </div>
+            </div>
+            <div class="center_bg"></div>
+        </div>
+        <!-- <div class="pc2_centers">
+            <div class="pc2_content">
+                <div class="pc2_content_left">
+                    <div class="pc2_content_left_1">
+                        <div class="item01" style="margin: 0">
+                            <div class="card2" >
+                                <div>接管面积（万/㎡）</div>
+                                <div>{{jgmj}}</div>
+                                <div><img  src="./assets/images/wygs/015.png" style="margin-top: -3px;" >{{jgmjhb}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pc2_content_left_2">
+                        
+                    </div>
+                </div>
+                <div class="pc2_content_right">
+                    <div class="gsjg_title">
+                        <span   class="titles" >接管情况 </span><span  class="dw1" style="float: left;" ></span>
+                    </div>
+                    <div id="jgmj"></div>
+                </div>
+            </div>
+		</div> -->
+        <div class="edu-content-left" >
+            <div class="edu-left-item1">
+                <div style="padding-top:15px; padding-left:10px;height: 100%;">
+                    <div class="edu-itemtitle butHover4 butBor btn_bg" ng-mouseenter="butHoverIn4();" ng-mouseleave="butHoverOut4();" ng-click="toCaiwu()">
+                        <p>财务分析</p>
+                    </div>
+                    <div class="edu-itembodys1" style="height:90%;">
+                        <div class="row" style="width:100%;height:14%;">
+                            <div class="pull-left describe describeMarLR">现金流入&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data6.xjll}}<label class="wy"></label></div> -->
+                          <div class="pull-right number numberMarLR">8888<label class="wy">万元</label></div>
+                        </div>
+                        <div class="row" style="width:100%;height:14%;">
+                            <div class="pull-left describe describeMarLR">净资产&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data6.jzc}}<label class="wy"></label></div> -->
+                             <div class="pull-right number numberMarLR">8888<label class="wy">万元</label></div> 
+                        </div>
+                        <div class="row" style="width:100%;height:14%;">
+                            <div class="pull-left describe describeMarLR">总资产&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data6.zzc}}<label class="wy"></label></div> -->
+                            <div class="pull-right number numberMarLR">8888<label class="wy">万元</label></div> 
+                        </div>
+                        <div class="row" style="width:100%;height:14%;">
+                            <div class="pull-left describe describeMarLR">EBITDA &nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data6.ebitda}}<label class="wy"></label></div> -->
+                             <div class="pull-right number numberMarLR">8888<label class="wy">万元</label></div> 
+                        </div>
+                        <div class="row" style="width:100%;height:14%;">
+                            <div class="pull-left describe describeMarLR">EBITDA百分比&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data6.ebitdabfb}}<label class="wy"></label></div> -->
+                             <div class="pull-right number numberMarLR">88<label class="wy">%</label></div> 
+                        </div>
+                        <div class="row" style="width:100%;height:14%;">
+                            <div class="pull-left describe describeMarLR">净利润&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data6.lrqk}}<label class="wy"></label></div> -->
+                            <div class="pull-right number numberMarLR">8888<label class="wy">万元</label></div>
+                        </div>
+                        <div class="row" style="width:100%;height:14%;">
+                            <div class="pull-left describe describeMarLR">总收入&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data6.zsr}}<label class="wy"></label></div> -->
+                            <div class="pull-right number numberMarLR">8888<label class="wy">万元</label></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="edu-left-item2">
+                <div style="padding-top:15px; padding-left:10px;height:100%;">
+                    <div class="edu-itemtitle butHover5 btn_bg" ng-mouseenter="butHoverIn5();" ng-mouseleave="butHoverOut5();" ng-click="toRenli()">
+                        <p>人力分析</p>
+                    </div>
+                    <div class="edu-itembodys2">
+                        <div class="row" style="width:100%;height:33%;">
+                            <div class="pull-left describe describeMarLR marL">集团总人数&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data7.jtzrs}}<label class="wy">人</label></div> -->
+                            <div class="pull-right number numberMarLR">8888<label class="wy">人</label></div>
+                        </div>
+                        <div class="row" style="width:100%;height:33%;">
+                            <div class="pull-left describe describeMarLR marL">教职工数量&nbsp;:</div>
+                            <!-- <div class="pull-right number numberMarLR">{{data7.jzgsl}}<label class="wy">人</label></div> -->
+                            <div class="pull-right number numberMarLR">8888<label class="wy">人</label></div>
+                        </div>
+                        <div class="row" style="width:100%;height:33%;">
+                            <div class="pull-left describe describeMarLR marL">教师数量&nbsp;:</div>
+                            <!--<div class="pull-right number numberMarLR">{{data7.jssl}}<label class="wy">人</label></div>-->
+                            <div class="pull-right number numberMarLR">8888<label class="wy">人</label></div>
+                        </div>
+                        <div class="row" style="width:100%;height:33%;">
+                            <div class="pull-left describe describeMarLR marL">教师学生比例&nbsp;:</div>
+                            <!--<div class="pull-right number numberMarLR">1&nbsp;:&nbsp;{{data7.xscyjs}}</div>-->
+                            <div class="pull-right number numberMarLR">1&nbsp;:&nbsp;88</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edu-content-right">
+            <div class="edu-right-item">
+                <div class="edu-right-itemtop">
+                    <div style="padding-top:15px; padding-left:10px;">
+                        <div class="edu-itemtitle-jyfx">
+                            <p>经营分析</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-right-itembody">
+                    <div class="edu-right-itembody1">
+                        <div class="itembodys1" >
+                            <div style="padding-top:8px; padding-left:40px;">
+                                <!--<button class="edu-itemtitle2 butHover1 butBor" ng-mouseenter="butHoverIn1();" ng-mouseleave="butHoverOut1();" ng-click="toSumPer()">-->
+                                    <!--<p class="pFx">最近学期经营状况</p>-->
+                                <!--</button>-->
+                                <div class="edu-itemtitle2">
+                                    <p>最近学期经营状况</p>
+                                </div>
+                            </div>
+                            <div class="itembodys1-left">
+                                <!-- <div class="cost">学费总缴费&ensp;:&ensp;&ensp;&ensp;&ensp;<label class="cost-number">{{data8.xfzjf}}<label class="cost-w">&ensp;万</label></label></div>
+                                <div class="newstudent">新生缴费&ensp;:&ensp;<label class="newstudent-number">{{data8.xsjf}}</label><label class="newstudent-wy">万元</label></div>
+                                <div class="newstudent">升读缴费&ensp;:&ensp;<label class="newstudent-number">{{data8.sdjf}}</label><label class="newstudent-wy">万元</label></div> -->
+                                <div class="cost">学费总缴费&ensp;:&ensp;&ensp;&ensp;&ensp;<label class="cost-number">8888<label class="cost-w">&ensp;万</label></label></div>
+                                <div class="newstudent">新生缴费&ensp;:&ensp;<label class="newstudent-number">8888</label><label class="newstudent-wy">万元</label></div>
+                                <div class="newstudent">升读缴费&ensp;:&ensp;<label class="newstudent-number">8888</label><label class="newstudent-wy">万元</label></div>
+                            </div>
+                            <div class="itembodys1-right">
+                                <!-- <div class="cost">缴费总人数&ensp;:&ensp;&ensp;&ensp;&ensp;<label class="cost-number">{{data8.jfzrs}}<label class="cost-w">&ensp;人</label></label></div> -->
+                                <div class="cost">缴费总人数&ensp;:&ensp;&ensp;&ensp;&ensp;<label class="cost-number">8888<label class="cost-w">&ensp;人</label></label></div>                                
+                                <div style="float:left;width:50%;">
+                                    <!-- <div class="newstudent">新生缴费人数&ensp;:&ensp;<label class="newstudent-number">{{data8.xsjfrs}}</label><label class="newstudent-wy">人</label></div>
+                                    <div class="newstudent">计划招生人数&ensp;:&ensp;<label class="newstudent-number">{{data1.jhzsrs | number:0}}</label><label class="newstudent-wy">人</label></div> -->
+                                    <div class="newstudent">新生缴费人数&ensp;:&ensp;<label class="newstudent-number">8888</label><label class="newstudent-wy">人</label></div>
+                                    <div class="newstudent">计划招生人数&ensp;:&ensp;<label class="newstudent-number">8888</label><label class="newstudent-wy">人</label></div>
+                                </div>
+                                <div style="float:right;width:50%;">
+                                    <!-- <div class="newstudent">升读缴费人数&ensp;:&ensp;<label class="newstudent-number">{{data8.sdjfrs}}</label><label class="newstudent-wy">人</label></div>
+                                    <div class="newstudent">招生完成率&ensp;:&ensp;<label class="newstudent-number">{{(data1.zswcl*100).toFixed(2)}}%</label></div> -->
+                                    <div class="newstudent">升读缴费人数&ensp;:&ensp;<label class="newstudent-number">8888</label><label class="newstudent-wy">人</label></div>
+                                    <div class="newstudent">招生完成率&ensp;:&ensp;<label class="newstudent-number">100%</label></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="itembodys2" >
+                            <div style="padding-top:8px; padding-left:40px;">
+                                <div class="edu-itemtitle2">
+                                    <p>近5学期缴费及人数变化</p>
+                                </div>
+                            </div>
+                            <div class="linechartleft">
+                                <div id="feelinechart" class="feelinechart">
+
+                                </div>
+                            </div>
+                            <div class="linechartright">
+                                <div id="peonumlinechart" class="peonumlinechart">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="itembodys3" >
+                            <div class="itembodys3-left">
+                                <div style="padding-top:8px; padding-left:40px;">
+                                    <button class="edu-itemtitle3 butHover2 butBor" ng-mouseenter="butHoverIn2();" ng-mouseleave="butHoverOut2();" ng-click="toTuiPro()">
+                                        <p class="pFx">各学段收费</p>
+                                    </button>
+                                </div>
+                                <div id="feepiecharts" class="feepiecharts">
+
+                                </div>
+                            </div>
+                            <div class="itembodys3-right">
+                                <div style="padding-top:8px; padding-left:25px; height: 100%">
+                                    <div class="edu-itemtitle3">
+                                        <p>集团新闻概况</p>
+                                    </div>
+                                    <div class="groupNews"><a ng-href = "http://www.brightscholar.com/142.html" target="_blank" aFz>1、&nbsp;博实乐承办第九届美国顶尖文理学院中国巡展</a></div>
+                                    <div class="groupNews"><a ng-href = "http://www.brightscholar.com/141.html" target="_blank" aFz>2、&nbsp;{{des | desfilter:true:22:'...'}}</a></div>
+                                    <div class="groupNews"><a ng-href = "http://www.brightscholar.com/140.html" target="_blank" aFz>3、&nbsp;以全球视野整合世界资源 大平台塑大品牌做大教育</a></div>
+                                    <div class="groupNews"><a ng-href = "http://www.brightscholar.com/139.html" target="_blank" aFz>4、&nbsp;博实乐正式在美国纽交所上市</a></div>
+                                    <div class="groupNews"><a ng-href = "http://www.brightscholar.com/137.html" target="_blank" aFz>5、&nbsp;博实乐教育集团总部新迁揭幕</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edu-right-itembody2">
+                        <div style="padding-top:8px;">
+                            <button class="edu-itemtitle3-top5 butHover3 butBor" ng-mouseenter="butHoverIn3();" ng-mouseleave="butHoverOut3();" ng-click="togrowthRate()">
+                                <p class="pFx">指标TOP5排行</p>
+                            </button>
+                            <div class="schoolKindergarten">
+                                <div class="schoolleft">
+                                    <div id = "school" class="school" ng-click="school()">
+                                        <label id="schoolLabel">学校</label>
+                                    </div>
+                                </div>
+                                <div class="kindergartenright">
+                                    <div id = "kindergarten" class="kindergarten" ng-click="kindergarten()" >
+                                        <label id="kindergartenLabel">幼儿园</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="schoolbar" class="schoolbar barflag_sch " ng-if="bar_falg_sch">
+                                <div id= "bar1" class="bar1">
+
+                                </div>
+                                <div id= "bar2" class="bar2">
+
+                                </div>
+                                <div id= "bar3" class="bar3">
+
+                                </div>
+                            </div>
+                            <div id="schoolbar" class="schoolbar barflag_kin" ng-if="bar_falg_kin">
+                                <div id= "bar1_kin" class="bar1">
+
+                                </div>
+                                <div id= "bar2_kin" class="bar2">
+
+                                </div>
+                                <div id= "bar3_kin" class="bar3">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

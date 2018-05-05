@@ -1,0 +1,332 @@
+<!-- 登录页面 -->
+<div ng-show="!loginflag" style="padding: 260px 30%;text-align: center;height: 115%;position: absolute;z-index: 99999; background: #fff;">
+    <form class="bs-example bs-example-form" role="form">
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" placeholder="用户名" ng-model="user" id="user">
+        </div>
+        <br>
+
+        <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="password" class="form-control" placeholder="密码" ng-model="psw" id="psw">
+        </div>
+        <br>
+
+        <div class="btn btn-default" ng-click="login()">
+            登录
+        </div>
+    </form>
+</div>
+<!--主界面-->
+<div class="qccp" ng-controller="qiancepriceCtrl">
+	<!--通过JS控制高度-->
+	<div class="content">
+		<!--全屏显示-->
+		<div class ="ispc" ng-if="ispc">
+            <img ng-if="qp" src="./assets/images/screen_w_k.png" ng-click="screen()" />
+            <img   ng-if="!qp" src="./assets/images/screen_w_g.png" ng-click="exitFullScreen()" />
+        </div>
+        <span class="unLogin" ng-click="unLogin()"><i></i>注销</span>
+        <div class="updataTime">
+        	最后更新时间：2017-09-26 09:02:55
+        	<span>{{updataTime}}</span>
+        </div>
+		<div class="toptitle">
+			<img src="./modulars/price/assets/images/qccp/qccp-title.png" alt="" />			
+		</div>
+		<!--下钻1-->
+		<div class = "qccpXiaZuanOneFather" ng-show="mask">
+			<div class="cancel" ng-click="cancel()">&times;</div>
+			<div id="qccpXiaZuanOne" ng-show="XZOne"></div>
+			<div id="qccpXiaZuanTwo" ng-show="XZTwo"></div>
+		</div>
+		<!--遮罩层-->
+		<div class="qccpMask" ng-show="mask"></div>
+		<div class="content1 clear">
+			<!--content上面部分-->
+			<div class="con1">
+				<div class="con1left">
+					<h3>
+						{{start_time+"-"+end_time+"新开盘项目净利润情况"}}
+					</h3>
+					<div class="tableBox">
+						<div class="thead" >
+							<span class = "t1 tt1">区域</span>
+							<span class = "t2 tt2">项目名称</span>
+							<span class = "t3">取证货量(亿)</span>
+							<span class = "t4">推售货量(亿)</span>
+							<span class = "t5">开盘销售量(亿)</span>
+							<span class="t7">按取证金额去化率</span>
+							<span class="t8">按推售金额去化率</span>
+							<span class="t9">投资定案净利润率</span>
+							<span class="t10">开盘净利润率</span>
+							<span class="t11">均衡去化得分</span>
+						</div>	
+						<!--<div class="tbody">
+							<div ng-repeat="items in NewProProfit" class="clear">
+								<span class = "t1">{{items.salearea|replaceArea}}</span>
+								<span class = "t2">{{items.projectname|sliceFont}}<em ng-show="items.fxjk=='是'"></em></span>
+								<span class = "t3 fontBlue">{{items.qzhl/100000000 |number:2}}</span>
+								<span class = "t4 fontBlue">{{items.tshl/100000000 |number:2}}</span>
+								<span class = "t5 fontBlue">{{items.kpxse/100000000 |number:2}}</span>
+								<span class = "t7 fontBlue">{{(items.qzeqhl*100|number:2)+"%"}}</span>
+								<span class = "t8 fontBlue">{{(items.tseqhl*100|number:2)+"%"}}</span>
+								<span class = "t9 fontBlue">{{(items.tzdnlrl*100|number:2)+"%"}}</span>
+								<span class = "t10 fontBlue">{{(items.kp_jlrl*100|number:2)+"%"}}</span>
+								<span class = "t11 fontBlue" ng-style = "{color:items.jhqhdf<60?'red':'#42F9E5'}">{{items.jhqhdf}}</span>
+							</div>
+							
+						</div>-->
+						<div class="tbody">
+							<div class="clear">
+								<span class = "t1 ">莞深区域二部</span>
+								<span class = "t2 ">黄州碧桂园中央公馆</span>
+								<span class = "t3">15</span>
+								<span class = "t4 ">32</span>
+								<span class = "t5 ">35</span>
+								<span class="t7">36%</span>
+								<span class="t8">60%</span>
+								<span class="t9">54%</span>
+								<span class="t10">26%</span>
+								<span class="t11">64</span>
+								<span class = "t1 ">广西区域二部</span>
+								<span class = "t2 ">济宁碧桂园济州印象</span>
+								<span class = "t3">34</span>
+								<span class = "t4 ">23</span>
+								<span class = "t5 ">56</span>
+								<span class="t7">56%</span>
+								<span class="t8">67%</span>
+								<span class="t9">23%</span>
+								<span class="t10">78%</span>
+								<span class="t11">78</span>
+								<span class = "t1 ">莞深区域二部</span>
+								<span class = "t2 ">福州碧桂园十里江湾</span>
+								<span class = "t3">45</span>
+								<span class = "t4 ">34</span>
+								<span class = "t5 ">56</span>
+								<span class="t7">26%</span>
+								<span class="t8">65%</span>
+								<span class="t9">46%</span>
+								<span class="t10">67%</span>
+								<span class="t11">89</span>
+								<span class = "t1 ">河南区域一部</span>
+								<span class = "t2 ">碧桂园华润新城之光</span>
+								<span class = "t3">15</span>
+								<span class = "t4 ">32</span>
+								<span class = "t5 ">35</span>
+								<span class="t7">36%</span>
+								<span class="t8">60%</span>
+								<span class="t9">54%</span>
+								<span class="t10">26%</span>
+								<span class="t11">64</span>
+								<span class = "t1 ">莞深区域三部</span>
+								<span class = "t2 ">中山碧桂园翡翠华庭</span>
+								<span class = "t3">15</span>
+								<span class = "t4 ">32</span>
+								<span class = "t5 ">35</span>
+								<span class="t7">36%</span>
+								<span class="t8">60%</span>
+								<span class="t9">54%</span>
+								<span class="t10">26%</span>
+								<span class="t11">64</span>
+								<span class = "t1 ">莞深区域二部</span>
+								<span class = "t2 ">黄州碧桂园中央公馆</span>
+								<span class = "t3">15</span>
+								<span class = "t4 ">32</span>
+								<span class = "t5 ">35</span>
+								<span class="t7">36%</span>
+								<span class="t8">60%</span>
+								<span class="t9">54%</span>
+								<span class="t10">26%</span>
+								<span class="t11">64</span>
+							</div>
+
+						</div>
+					
+					</div>
+				</div>
+				<div class="con1right">
+					<!--<p>集团近一年均价走势图</p>
+					<div id="groupOneChart">
+
+					</div>-->
+					<div id="myCarousel" class="carousel slide">
+						<!-- 轮播（Carousel）指标2 -->
+						<!--<ol class="carousel-indicators">
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>							
+						</ol>-->
+						<!-- 轮播（Carousel）项目 -->
+						<div ng-class="{'pause':true,'starting':!start,'pauseing':start}" ng-click="bofang()"></div>
+						<div class="carousel-inner">
+							<div class="item active">
+								<p class="p1">集团近一年均价走势图</p>
+								<div id="groupOneChart"></div>
+								
+							</div>
+							<div class="item">
+								<p class="p1">集团各物业类型近一年均价走势</p>
+								<div id="groupTwoChart"></div>
+								
+							</div>
+							<div class="item">
+								<p class="p1">劳斯莱斯产品近一年均价走势</p>
+								<div id="groupThreeChart"></div>
+								
+							</div>
+							
+						</div>
+						<div class="p2 p3">
+							<span data-target="#myCarousel" ng-click="carouselTab(1)" ng-class="{'active':caidx==1}" data-slide-to="0">集团整体均价</span>
+							<span data-target="#myCarousel" ng-click="carouselTab(2)" ng-class="{'active':caidx==2}" data-slide-to="1">各物业类型均价</span>
+							<span data-target="#myCarousel" ng-click="carouselTab(3)"  ng-class="{'active':caidx==3}"data-slide-to="2">劳斯莱斯产品均价</span>
+						</div>
+						<!-- 轮播（Carousel）导航 -->
+						<!--<a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+						<a class="carousel-control right" href="#myCarousel" data-slide="next"></a>-->
+						
+					</div>
+				</div>
+			</div>
+
+			<!--content中间部分-->
+			<div class="con2">
+				<div class="con2box con2left">
+					<h3>
+						异常降价监控
+					</h3>
+					<div class="tableBox">
+						<div class="thead" >
+							<span class = "t1 tt1">营销区域</span>
+							<span class = "t2 tt2">项目</span>
+							<span class = "t3">项目上半年成交净利润率</span>
+							<span class = "t4 tt4">产品</span>
+							<span class = "t5 tt5">装标</span>
+							<span class="t6">本年累计成交套数</span>
+							<span class="t7">第一季成交均价(元/m<sup>2</sup>)</span>
+							<span class="t8">第二季成交均价(元/m<sup>2</sup>)</span>
+							<span class="t9">第三季成交均价(元/m<sup>2</sup>)</span>
+							<span class="t10">第四季成交均价(元/m<sup>2</sup>)</span>
+							<span class="t11 tt11">环比降幅</span>
+						</div>	
+						<!--<div class="tbody">
+							<div ng-repeat="items in YiChang" class="clear yichang" repeat-finish data-tip="{{items.fxjk}}">
+								<span class = "t1">{{items.salearea|replaceArea}}</span>
+								<span class = "t2">{{items.projectname|sliceFont}}<em ng-show="items.fxjk=='是'"></em></span>
+								<span class = "t3 fontBlue">{{items.xmcjll?(items.xmcjll*1|number:2):""}}{{items.xmcjll?"%":""}}</span>
+								<span class = "t4 fontBlue">{{items.roomsort}}</span>
+								<span class = "t5 fontBlue">{{items.jwbz}}</span>
+								<span class = "t6 fontBlue">{{items.cjts}}</span>
+								<span class = "t7 fontBlue">{{items.firstcjjj|toThousands}}</span>
+								<span class = "t8 fontBlue">{{items.secondcjjj|toThousands}}</span>
+								<span class = "t9 fontBlue">{{items.thirdcjjj|toThousands}}</span>
+								<span class = "t10 fontBlue">{{items.fourthcjjj|toThousands}}</span>
+								<span class = "t11 fontBlue">{{items.hbjf+"%"}}</span>
+							</div>
+							<i class="tip tl">
+								风险较大：净利润<=5%<br/> 或环比降幅<=-5%
+							</i>
+						</div>-->
+
+						<div class="tbody">
+							<div  class="clear yichang">
+								<span class = "t1">营销区域</span>
+								<span class = "t2">黄州碧桂园中央公馆<!--<em ng-show="items.fxjk=='是'"></em>--></span>
+								<span class = "t3 fontBlue">-43.7%</span>
+								<span class = "t4 fontBlue">双拼</span>
+								<span class = "t5 fontBlue">装修</span>
+								<span class = "t6 fontBlue">181</span>
+								<span class = "t7 fontBlue">12.616</span>
+								<span class = "t8 fontBlue">14130</span>
+								<span class = "t9 fontBlue">13717</span>
+								<span class = "t10 fontBlue">3789</span>
+								<span class = "t11 fontBlue">-5%</span>
+								<span class = "t1">营销区域</span>
+								<span class = "t2">黄州碧桂园中央公馆<!--<em ng-show="items.fxjk=='是'"></em>--></span>
+								<span class = "t3 fontBlue">-43.7%</span>
+								<span class = "t4 fontBlue">双拼</span>
+								<span class = "t5 fontBlue">装修</span>
+								<span class = "t6 fontBlue">181</span>
+								<span class = "t7 fontBlue">12.616</span>
+								<span class = "t8 fontBlue">14130</span>
+								<span class = "t9 fontBlue">13717</span>
+								<span class = "t10 fontBlue">3789</span>
+								<span class = "t11 fontBlue">-5%</span>
+								<span class = "t1">营销区域</span>
+								<span class = "t2">黄州碧桂园中央公馆<!--<em ng-show="items.fxjk=='是'"></em>--></span>
+								<span class = "t3 fontBlue">-43.7%</span>
+								<span class = "t4 fontBlue">双拼</span>
+								<span class = "t5 fontBlue">装修</span>
+								<span class = "t6 fontBlue">181</span>
+								<span class = "t7 fontBlue">12.616</span>
+								<span class = "t8 fontBlue">14130</span>
+								<span class = "t9 fontBlue">13717</span>
+								<span class = "t10 fontBlue">3789</span>
+								<span class = "t11 fontBlue">-5%</span>
+								<span class = "t1">营销区域</span>
+								<span class = "t2">黄州碧桂园中央公馆<!--<em ng-show="items.fxjk=='是'"></em>--></span>
+								<span class = "t3 fontBlue">-43.7%</span>
+								<span class = "t4 fontBlue">双拼</span>
+								<span class = "t5 fontBlue">装修</span>
+								<span class = "t6 fontBlue">181</span>
+								<span class = "t7 fontBlue">12.616</span>
+								<span class = "t8 fontBlue">14130</span>
+								<span class = "t9 fontBlue">13717</span>
+								<span class = "t10 fontBlue">3789</span>
+								<span class = "t11 fontBlue">-5%</span>
+								<span class = "t1">营销区域</span>
+								<span class = "t2">黄州碧桂园中央公馆<!--<em ng-show="items.fxjk=='是'"></em>--></span>
+								<span class = "t3 fontBlue">-43.7%</span>
+								<span class = "t4 fontBlue">双拼</span>
+								<span class = "t5 fontBlue">装修</span>
+								<span class = "t6 fontBlue">181</span>
+								<span class = "t7 fontBlue">12.616</span>
+								<span class = "t8 fontBlue">14130</span>
+								<span class = "t9 fontBlue">13717</span>
+								<span class = "t10 fontBlue">3789</span>
+								<span class = "t11 fontBlue">-5%</span>
+								<span class = "t1">营销区域</span>
+								<span class = "t2">黄州碧桂园中央公馆<!--<em ng-show="items.fxjk=='是'"></em>--></span>
+								<span class = "t3 fontBlue">-43.7%</span>
+								<span class = "t4 fontBlue">双拼</span>
+								<span class = "t5 fontBlue">装修</span>
+								<span class = "t6 fontBlue">181</span>
+								<span class = "t7 fontBlue">12.616</span>
+								<span class = "t8 fontBlue">14130</span>
+								<span class = "t9 fontBlue">13717</span>
+								<span class = "t10 fontBlue">3789</span>
+								<span class = "t11 fontBlue">-5%</span>
+							</div>
+							<i class="tip tl">
+								风险较大：净利润<=5%<br/> 或环比降幅<=-5%
+							</i>
+						</div>
+					
+					</div>
+				</div>
+				
+			</div>
+			<!--content下面部分-->
+			<div class="con3">
+
+				<div class="con3box">
+					<p>{{qccpChartFiveTitle}}</p>
+					<div id="groupFiveChart">
+						
+					</div>
+				</div>
+				<div class="con3box">
+					<!--<span class="timeRang">9月10日-9月18日</span>-->
+					<span class="timeRang">{{timeRang}}</span>					
+					<p>集团各区域近一个月成交均价情况</p>
+					<div id="groupFourChart">
+			
+					</div>					
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

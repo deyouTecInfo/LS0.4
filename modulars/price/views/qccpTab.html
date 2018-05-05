@@ -1,0 +1,217 @@
+<!--主界面-->
+<div class="qccp qccpTab" ng-controller="qccpTabCtrl">
+	<!--通过JS控制高度-->
+	<div class="content">
+		<!--全屏显示-->
+		<div ng-if="ispc">
+            <img ng-if="qp" src="./assets/images/screen_w_k.png"  style="cursor: pointer;position: absolute;right: 3%;top: 4%;width: 28px;z-index: 1001;"
+                 ng-click="screen()" />
+            <img   ng-if="!qp" src="./assets/images/screen_w_g.png"
+                 style="cursor: pointer;position: absolute;right: 3%;top: 4%;width: 28px;z-index: 1001;"
+                 ng-click="exitFullScreen()" />
+        </div>
+		<div class="toptitle sales">
+			<span class="print pi-nt list" ng-click="myprint()"></span>
+			<span style="display: none;" class="pi-nt export list" ng-click="exportExcel()"></span>
+			<div class="imgBox">
+				{{Syqcqyyjpdxzdata[0].areaname+"溢价情况"}}			
+			</div>
+			<span class="cl-ose pi-nt list" ng-click="goHome()"></span>
+			<div class = "tableOne">
+				<table >
+					
+					<tr class="oneTr">
+						<td class="order">序号</td>
+						<td class="oneTd">项目名称</td>
+						<td class="twoTd">溢价/破底总额</td>
+						<td class="ThreeTd">溢价率(%)</td>
+						<td class="fourTd">区域平均溢价率(%)</td>
+					</tr>
+				</table>
+				
+			</div>
+		</div>
+		<div class="content1 clear">
+			<!--content部分-->
+			
+			<div>
+				
+			</divclass = "tableTwo">
+				<!--<table >
+					<tr ng-repeat="items in Syqcqyyjpdxzdata track by $index" repeat-finishtwo>
+						<td class="order" ng-bind='$index+1'></td>
+						<td class="oneTd">{{items.projectname}}</td>
+						<td class="twoTd">{{items.zje|toThousands}}</td>
+						<td class="ThreeTd">{{items.pjyjl*100|number:2}}%</td>
+						<td class="fourTd">{{items.qyyjl*100|number:2}}%</td>
+					</tr>
+					
+				</table>-->
+				<table >
+					<tr >
+						<td class="order" >1</td>
+						<td class="oneTd">一期</td>
+						<td class="twoTd">1000</td>
+						<td class="ThreeTd">1%</td>
+						<td class="fourTd">1%</td>
+					</tr>
+					<tr >
+						<td class="order" >2</td>
+						<td class="oneTd">二期</td>
+						<td class="twoTd">2000</td>
+						<td class="ThreeTd">2%</td>
+						<td class="fourTd">2%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+					<tr >
+						<td class="order" >3</td>
+						<td class="oneTd">三期</td>
+						<td class="twoTd">3000</td>
+						<td class="ThreeTd">3%</td>
+						<td class="fourTd">3%</td>
+					</tr>
+
+				</table>
+			<p>数据来源于投策中心手工报表，数据录入日期截止至：2017年9月19日 12：30：23</p>
+		</div>
+	</div>
+</div>
+<!--<div class="sales fiex" style="background: rgb(27, 57, 78);">
+	<span class="print pi-nt list" ng-click="myprint()"></span>
+	<span class="pi-nt export list" ng-click="exportExcel()"></span>
+	<span class="ht-bg tdtz list wds" style="background: url(&quot;./assets/images/qytdtz.png&quot;) 0% 0% / 100% 100% no-repeat;"></span>
+	<span class="AllDyprint">国内区域土地投资情况</span>
+	<span class="cl-ose pi-nt list" ng-click="goHome()"></span>
+</div>-->

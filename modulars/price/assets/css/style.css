@@ -1,0 +1,757 @@
+/**
+   前策产品桌面 ---start
+   1366*768
+ */
+/*继承浏览器高度*/
+/*html,body,.container-fluid,.ui,.qccp{
+	height: 100%;
+}*/
+.bgc{
+	background-color: rgb(17, 25, 72);
+}
+.qccp .ispc img{
+	cursor: pointer;
+	position: absolute;
+	right:1%;top:2%;
+	width: 28px;
+	z-index: 1001;
+}
+.qccp .content{
+	height:100%;
+	position: relative;
+}
+ .qccp.clear:after{
+	display:block;
+	clear:both;
+	content:".";
+	visibility:hidden;
+	height:0;
+	overflow:hidden;
+}
+
+.qccp h1,.qccp h2,.qccp h3,.qccp div,.qccp ul,.qccp li,.qccp dl,.qccp dt,.qccp dd,.qccp table,.qccp tr,.qccp td,.qccp tbody{
+	margin: 0;
+	padding: 0;
+}
+.qccp .fontBlue{
+	color:#42F9E5
+}
+.qccp .updataTime{
+	position: absolute;
+	width: 250px;
+	top: 6.8%;
+	right: 6.7%;
+	font-size: 1.2rem;
+	color:#BFDBFF;
+	
+}
+.qccp i{
+	font-style: normal;
+}
+.qccp .content{
+	margin:0;
+	width:100%;
+	background-color: #111948;
+	font-family: "微软雅黑";
+}
+.qccp .toptitle{
+	width:100%;
+	height:11%;
+	position: relative;
+}
+.qccp .toptitle img{
+	width: 28%;
+	height: 150px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	
+}
+.qccp .content1{
+	width:100%;
+	height:89%;
+	padding:0 1.25%;
+}
+
+
+.qccp .content .con1{
+	width:100%;
+	height:29%;
+}
+.qccp .con1 .con1left{
+	width: 66%;
+	height: 100%;
+	float: left;
+	padding-bottom: 1%;
+	background: url(../images/qyhf_hpt.png) center center  / 100% 100% no-repeat;
+}
+.qccp .con1 .con1left h3{
+	height: 10%;
+	font-size: 1.6rem;
+	color:#cdd3ee;
+	padding-top: 0.5%;
+	padding-left:1.8%;
+	box-sizing: border-box;
+}
+
+.qccp .con1 .con1left .tableBox{
+	font-size: 1rem;
+	color: #cdd3ee;
+	padding-top: 2%;
+	padding-top: 1%;
+	height: 90%;
+	text-align: center;
+}
+.qccp .con1 .con1left .tableBox .thead{
+	font-size: 12px;
+	overflow: hidden;
+	height: 32%;
+}
+.qccp .con1left .tableBox .thead span{
+	float: left;
+	position: relative;
+}
+.qccp .con1 .con1left .tableBox .tbody{
+	overflow: auto;
+	height: 68%;
+	position: relative;
+}
+.qccp .con1left .tableBox .tbody>div{
+	height: 21%;
+}
+.qccp .con1left .tableBox .tbody span{
+	float: left;
+	position: relative;
+	height: 100%;
+}
+.qccp .con1left .t1{
+	width: 9%;
+}
+.qccp .con1left .t2{
+	width: 16%;
+}
+.qccp .con1left .t3{
+	width: 9%;
+	padding: 0 1%;
+}
+.qccp .con1left .t4{
+	width: 9%;
+	padding: 0 1%;
+}
+.qccp .con1left .t5{
+	width: 9%;
+}
+/*.qccp h3,.qccp p{
+	font-weight: bold;
+}*/
+.qccp .tt1{
+	height: 34px;
+	line-height: 34px;
+}
+.qccp .tt2{
+	height: 34px;
+	line-height: 34px;
+}
+.qccp .con2left .tt4,.qccp .con2left .tt5,.qccp .con2left .tt11{
+	height: 34px;
+	line-height: 34px;
+}
+.qccp .con1left .t7,.qccp .con1left .t8,.qccp .con1left .t9,.qccp .con1left .t10{
+	width: 10%;
+	padding: 0 1%;
+	
+}
+.qccp .con1left .t11{
+	width: 8%;
+}
+
+.qccp .con1 .con1right{
+	width: 33.5%;
+	height: 205.5%;
+	float: right;
+	background: url(../images/qyhf_hpt.png) center center  / 100% 100% no-repeat;
+}
+.qccp .con1 .con1right .p1{
+    margin: 0;
+    height: 14%;
+    font-size: 1.6rem;
+    color: #cdd3ee;
+    padding-top: 0.5%;
+    padding-left: 3.4%;
+    box-sizing: border-box;
+}
+.qccp .con1 .con1right .p2{
+	border:1px solid #027EC8;
+	border-radius: 5px;
+	font-size: 1.2rem;
+	width: 80%;
+	padding-left: 0;
+	margin: 0 auto;
+	margin-top:1%;
+	padding:1%;
+	
+}
+.qccp .p3{
+	position: absolute;
+    bottom: 3%;
+    left: 12%;
+}
+.qccp .con1 .con1right .p2 span{
+	margin:0 3.8%;
+	cursor: pointer;
+	
+}
+.qccp .con1 .con1right .p2 span.active{
+	color:#32A8E6;
+}
+.qccp .con1 .con1right>div{
+    height: 72%;
+    color: #cdd3ee;
+    box-sizing: border-box;
+}
+
+.qccp .content .con2{
+	width:100%;
+	height:29.5%;
+	margin-top: 0.5%;
+}
+.qccp .con2 .con2box:nth-child(1){
+	width: 66%;
+	height: 100%;
+	float:left;
+	padding-bottom: 1%;;
+	background:url(../images/qyhf_hpt.png) center center  / 100% 100% no-repeat !important;
+}
+.qccp .con2 .con2box:nth-child(2){
+	display: none;
+	width: 33%;
+	height: 100%;
+	float:left;
+	position: relative;
+	background:url(../images/qyhf_hpt.png) center center  / 100% 100% no-repeat !important;
+}
+.qccp .con2 .con2left h3{
+	height: 10%;
+	font-size: 1.6rem;
+	color:#cdd3ee;
+	padding-top: 0.5%;
+	padding-left:1.8%;
+	box-sizing: border-box;
+}
+
+.qccp .con2 .con2left p{
+	height: 13%;
+	font-size: 1rem;
+	color:#cdd3ee;
+	padding-top: 0.5%;
+	padding-left:1.5%;
+	margin:0;
+}
+.qccp .con2 .con2left p i{
+	padding-left:4%;
+	position: relative;
+}
+.qccp .con2 .con2left p i em{
+	position: absolute;
+	width: 4%;
+	height: 82%;
+	left: 30%;
+	top: 0;
+	background: url(../images/qccp/qccp-gantan.png) center center /100% 100% no-repeat;
+}
+.qccp .con2 .con2left .tableBox{
+	font-size: 1rem;
+	color: #cdd3ee;
+	padding-top: 2%;
+	height: 90%;
+	text-align: center;
+}
+.qccp .con2 .con2left .tableBox .thead{
+	font-size: 12px;
+	overflow: hidden;
+	height: 32%;
+}
+.qccp .con2left .tableBox .thead span{
+	float: left;
+	position: relative;
+}
+.qccp .con2 .con2left .tableBox .tbody{
+	overflow: auto;
+	position: relative;
+	height: 68%;
+}
+/*table中的感叹号*/
+.qccp .con2  .con2left .tableBox em{
+	position: absolute;
+	width: 3%;
+	height: 72%;
+	right: 2%;
+	top: 16%;
+	background: url(../images/qccp/qccp-gantan.png) center center /100% 100% no-repeat;
+}
+
+.qccp .con2left .tableBox .tbody>div{
+	height: 21%;
+}
+.qccp .con2left .tableBox .tbody .tip{
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	color:#cdd3ee;
+	left: 0;
+	top: 0;
+	border-radius: 8px;
+	padding: 5px;
+	display: none;
+}
+.qccp .con2left .tableBox .tbody .tip.tl:after{
+	position: absolute;
+	left: 2px;
+	top: -8px;
+	width: 0;
+	content: "";
+	height:0;
+	border-left:8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom:8px solid red;
+}
+.qccp .con2left .tableBox .tbody .tip.tr:after{
+	position: absolute;
+	right: 2px;
+	top: -8px;
+	width: 0;
+	content: "";
+	height:0;
+	border-left:8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom:8px solid red;
+}
+.qccp .con2left .tableBox .tbody .tip.bl:before{
+	position: absolute;
+	left: 2px;
+	bottom: -8px;
+	width: 0;
+	content: "";
+	height:0;
+	border-left:8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top:8px solid red;
+}
+.qccp .con2left .tableBox .tbody .tip.br:before{
+	position: absolute;
+	right: 2px;
+	bottom: -8px;
+	width: 0;
+	content: "";
+	height:0;
+	border-left:8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top:8px solid red;
+}
+.qccp .con2left .tableBox .tbody span{
+	float: left;
+	position: relative;
+	height: 100%;
+	cursor: pointer;
+}
+.qccp .con2left .t1{
+	width: 9%;
+}
+.qccp .con2left .t2{
+	width: 16%;
+}
+.qccp .con2left .t3{
+	width: 11.5%;
+	padding: 0 1%;
+}
+.qccp .con2left .t4{
+	width: 4.5%;
+}
+.qccp .con2left .t5{
+	width: 4%;
+}
+.qccp .con2left .t6{
+	width: 7%;
+}
+.qccp .con2left .t7,.qccp .con2left .t8,.qccp .con2left .t9,.qccp .con2left .t10{
+	width: 10%;
+	padding: 0 1%;
+	
+}
+.qccp .con2left .t11{
+	width: 8%;
+}
+/*table中的感叹号*/
+.qccp .con2 . .con2left .tableBox em{
+	position: absolute;
+	width: 3%;
+	height: 72%;
+	right: 2%;
+	top: 16%;
+	background: url(../images/qccp/qccp-gantan.png) center center /100% 100% no-repeat;
+}
+
+/*轮播图开始*/
+.qccp .pauseing{
+	background: url(../images/qccp/pause.png) center center /100% 100% no-repeat;
+}
+.qccp .starting{
+	background: url(../images/qccp/start.png) center center /100% 100% no-repeat;
+}
+.qccp .pause{
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 2%;
+	bottom: 3%;
+	z-index: 500;
+}
+.qccp .pause:active{
+	width: 27px;
+	height: 27px;
+	left: 1.2%;
+	bottom: 2%;
+}
+.qccp #myCarousel{
+	height: 100%;
+}
+.qccp #myCarousel .carousel-inner{
+	height: 100%;
+}
+.qccp #myCarousel .carousel-inner>div{
+	height: 100%;
+}
+.qccp #myCarousel .carousel-inner>div>div{
+	height: 300px;
+	width: 450px;
+	color:#cdd3ee;
+	box-sizing: border-box;
+}
+/*轮播图结束*/
+
+.qccp .content .con3{
+	width:100%;
+	height:35.5%;	
+	margin-top: 0.5%;
+}
+
+.qccp .con3 .con3box{
+	width: 49.75%;
+	height: 100%;
+	position: relative;
+	float:left;
+	background:url(../images/qyhf_hpt.png) center center  / 100% 100% no-repeat;
+}
+.qccp .con3 .con3box:first-child{
+	margin-right: 0.5%;
+}
+.qccp .con3 .con3box span{
+	position: absolute;
+	left: 43%;
+	top: 3%;
+	color:#BFDBFF;
+	font-size: 1.2rem;
+}
+.qccp .con3 .con3box p{
+	margin:0;
+	height: 12%;
+	font-size: 1.6rem;
+	color:#cdd3ee;
+	padding-top: 0.5%;
+	padding-left:2.6%;
+	box-sizing: border-box;
+}
+.qccp .con3 .con3box>div{
+	height: 88%;
+	color:#cdd3ee;
+	box-sizing: border-box;
+}
+
+/*下钻1样式*/
+.qccp .qccpXiaZuanOneFather{
+	position: absolute;
+	width: 41%;
+	height: 38%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background: url(../images/qccp/2.png) center center  / 100% 100% no-repeat;
+	z-index: 1000;
+}
+.qccp .qccpXiaZuanOneFather #qccpXiaZuanOne{
+	height: 252px;
+	width: 560px;
+}
+.qccp .qccpXiaZuanOneFather #qccpXiaZuanTwo{
+	height: 240px;
+	width: 560px;
+}
+/*取消下钻样式*/
+.qccp .qccpXiaZuanOneFather .cancel{
+	font-size: 24px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 25px;
+	width: 25px;
+	line-height: 25px;
+	text-align: center;	
+	color: #cdd3ee;
+	z-index: 9999;
+}
+.qccp .qccpXiaZuanOneFather .cancel:hover{
+	cursor: pointer;
+}
+/*遮罩层样式*/
+.qccp .qccpMask{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	background-color: rgba(0,0,0,0.5) 
+}
+/*前策注销*/
+.qccp .unLogin{
+	position: absolute;
+	right: 5%;
+	top: 6.4%;
+	color: #cdd3ee;
+	cursor: pointer;
+	z-index: 999;
+}
+.qccp .unLogin i{
+	position: absolute;
+	left: -19px;
+    top: 2px;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+	background:url(../images/zhuxiao.png) center center  / 100% 100% no-repeat;
+	
+}
+/*前策下钻表格样式*/
+.qccp.qccpTab .toptitle {
+	height: 109px;
+	position: fixed;
+	padding: 0 2%;
+	background-color:#111948;
+	
+}
+.qccp.qccpTab .toptitle .tableOne{
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	color: #cdd3ee;
+	width: 96%;
+	font-weight: bold;
+}
+.qccp.qccpTab .toptitle table .oneTr{
+	height:29px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.qccp.qccpTab .toptitle .imgBox{
+	width: 28%;
+	height: 137%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	color: #cdd3ee;
+	font-size: 2.2rem;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 1.3%;
+	background: url(../images/qccp/Tabtltle.png) center center  / 100% 100% no-repeat;
+	
+}
+.qccp.qccpTab .content1{
+	padding: 2%;
+	padding-top: 109px;
+}
+
+.qccp.qccpTab .content1 table,.qccp.qccpTab .content1 td{
+	border:1px solid #898b92;
+	color:#cdd3ee;
+	text-align: center;
+	border-collapse: collapse;
+}
+.qccp.qccpTab .content1 tr:nth-of-type(2n+1){
+	background: #1e2753;
+}
+.qccpTab .content1 p {
+	padding-top: 5px;
+    float: right;
+    font-size: 12px;
+    color:#8288a3;
+}
+.qccpTab .tableOne table{
+	border:1px solid #898b92;
+	background: #28305b;
+}
+.qccp.qccpTab .toptitle table .oneTr td{
+	padding:0.4%
+}
+.qccp.qccpTab .content1 td{
+	padding:0.1%;
+	font-size: 14px;
+}
+.qccpTab .oneTd,.qccpTab .twoTd,.qccpTab .ThreeTd,.qccpTab .fourTd{
+	width:23%;
+}
+.qccpTab .order{
+	width:8%;
+}
+/*适配1280大屏*/
+@media screen and (max-width: 1285px){
+	.qccp .con1 .con1right .p2{
+		width: 83%;
+	}
+}
+/*适配1440大屏*/
+@media screen and (min-width: 1400px){
+	.qccp .updataTime{
+		width: 288px;
+	}
+}
+/*适配1920大屏*/
+@media screen and (min-width: 1900px){
+	.qccp .updataTime{
+		width: 410px;
+		font-size: 2rem;
+	}
+	.qccp .con1 .con1left h3{
+		font-size: 2.1rem;
+	}
+	.qccp .con1 .con1left p{
+		font-size: 1.9rem;
+	}
+	.qccp .con1 .con1left dl{
+		font-size: 1.7rem;
+	}
+	.qccp .con1 .con1left h3{
+		font-size: 2.1rem;
+	}
+	.qccp .con1 .con1left p{
+		font-size: 1.7rem;
+		padding-top: 1%;
+	}
+	.qccp .con1 .con1left .tableBox{
+		font-size: 1.7rem;
+		
+	}
+	.qccp .con1 .con1left .tableBox .thead{
+		font-size: 1.8rem;
+		height:33%
+	}
+	.qccp .con1 .con1left .tableBox .tbody{
+		height: 67%;
+	}
+	
+	.qccp .con2 .con2two p{
+		font-size: 2.1rem;
+	}
+	.qccp .con3 .con3box p{
+		font-size: 2.1rem;
+	}
+	.qccp.qccpTab .toptitle{
+		height: 153px;
+	}
+	.qccp.qccpTab .content1{
+		padding-top:153px;
+	}
+	.qccp.qccpTab .toptitle .imgBox{
+		height: 153%;
+		font-size: 3.2rem;
+	}
+	.qccp.qccpTab .toptitle table .oneTr{
+		font-size: 24px;
+	}
+	.qccp .unLogin{
+		font-size: 18px;
+		top:6.9%;
+	}
+	.qccp.qccpTab .toptitle .imgBox{
+		padding-top:1.5%;
+	}
+	.qccp.qccpTab .sales .pi-nt{
+		height:42px;
+	}
+	.qccp .con1 .con1right .p1{
+		font-size:2.1rem ;
+	}
+	.qccp .con1 .con1right .p2{
+		font-size: 1.8rem;
+		width: 84%;
+	}
+	
+	
+	
+	.qccp .con2 .con2left h3{
+		font-size: 2.1rem;
+	}
+	.qccp .con2 .con2left p{
+		font-size: 1.9rem;
+	}
+	.qccp .con2 .con2left dl{
+		font-size: 1.7rem;
+	}
+	.qccp .con2 .con2left h3{
+		font-size: 2.1rem;
+	}
+	.qccp .con2 .con2left p{
+		font-size: 1.7rem;
+		padding-top: 1%;
+	}
+	.qccp .con2 .con2left .tableBox{
+		font-size: 1.7rem;
+		
+	}
+	.qccp .con2 .con2left .tableBox .thead{
+		font-size: 1.8rem;
+		height:33%
+	}
+	.qccp .con2 .con2left .tableBox .tbody{
+		height: 67%;
+	}
+	/*.qccp h3,.qccp p{
+		font-weight: bold;
+	}*/
+	.qccp .tt1{
+		height: 50px;
+		line-height: 50px;
+	}
+	.qccp .tt2{
+		height: 50px;
+		line-height: 50px;
+	}
+	.qccp .con2left .tt4,.qccp .con2left .tt5,.qccp .con2left .tt11{
+		height: 50px;
+		line-height: 50px;
+	}
+	.qccp .p3{
+		position: absolute;
+	    bottom: 3%;
+	    left: 8%;
+	}
+	.qccp.qccpTab .content1 td{
+		font-size: 19px;
+	}
+	.qccp .toptitle img{
+		height: 213px;
+	}
+	.qccp .con3 .con3box span{
+		font-size: 2rem;
+	}
+	.qccp .ispc img{
+		width: 45px;
+	}
+	.qccp .unLogin i{
+		left: -27px;
+		width: 23px;
+    	height: 23px;
+	}
+}
+/**
+   前策产品桌面 ---end
+ */
